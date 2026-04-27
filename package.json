@@ -4,11 +4,12 @@
   "description": "Free Online Tools Suite - Video, PDF, and Conversion Tools",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
     "backend": "node backend/src/index.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run backend\""
+    "dev:all": "concurrently \"npm run dev\" \"npm run backend\"",
+    "setup": "cd frontend && npm install && cd ../backend && npm install"
   },
   "dependencies": {
     "vue": "^3.4.21",
