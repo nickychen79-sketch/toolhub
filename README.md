@@ -81,13 +81,33 @@ toolhub/
 
 ## Deployment
 
-### Option 1: Static Hosting (Frontend Only)
+### Option 1: Vercel (Recommended)
 
-Build the frontend and deploy to any static hosting:
+1. Install Vercel CLI: `npm i -g vercel`
+2. Run `vercel` in the frontend directory
+3. Follow the prompts - that's it!
+
+Or connect your GitHub repo at https://vercel.com/new
+
+### Option 2: Netlify
+
+1. Go to https://netlify.com
+2. Connect your GitHub repo
+3. Build command: `npm run build`
+4. Publish directory: `frontend/dist`
+
+### Option 3: Cloudflare Pages
+
+1. Go to https://pages.cloudflare.com
+2. Connect your GitHub repo
+3. Build command: `npm run build`
+4. Output directory: `dist`
+
+### Option 4: Manual Static Hosting
 
 ```bash
 npm run build
-# Upload frontend/dist/ to Netlify, Vercel, Cloudflare Pages, etc.
+# Upload frontend/dist/ to any web server
 ```
 
 For video downloading, use a third-party API service.
