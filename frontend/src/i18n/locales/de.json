@@ -1,0 +1,181 @@
+{
+  "common": {
+    "appName": "ToolHub",
+    "tagline": "Kostenlose Online-Tools - Schnell, Einfach, Ohne Anmeldung",
+    "home": "Startseite",
+    "videoTools": "Video-Tools",
+    "pdfTools": "PDF-Tools",
+    "converters": "Konverter",
+    "allTools": "Alle Tools",
+    "loading": "Laden...",
+    "processing": "Verarbeitung...",
+    "download": "Herunterladen",
+    "downloadAll": "Alle Herunterladen",
+    "upload": "Hochladen",
+    "selectFile": "Datei Auswählen",
+    "dragDrop": "Dateien hier ablegen",
+    "orBrowse": "oder durchsuchen zum Hochladen",
+    "supportedFormats": "Unterstützte Formate",
+    "maxFileSize": "Max. Dateigröße",
+    "clear": "Löschen",
+    "reset": "Zurücksetzen",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "close": "Schließen",
+    "language": "Sprache",
+    "freeForever": "Für Immer Kostenlos",
+    "noLogin": "Keine Anmeldung",
+    "browserBased": "Browser-Basiert"
+  },
+  "home": {
+    "hero": {
+      "title": "Kostenlose Online-Tools",
+      "subtitle": "Video-Downloader, PDF-Konverter, Währungskurse und mehr. Keine Anmeldung. Funktioniert sofort in Ihrem Browser."
+    },
+    "videoCard": {
+      "title": "Video-Tools",
+      "description": "Videos von TikTok, YouTube und mehr herunterladen. Videos komprimieren oder Audio als MP3 extrahieren.",
+      "button": "Video-Tools"
+    },
+    "pdfCard": {
+      "title": "PDF-Tools",
+      "description": "PDF-Dateien konvertieren, zusammenführen und komprimieren. Lokale Verarbeitung in Ihrem Browser.",
+      "button": "PDF-Tools"
+    },
+    "converterCard": {
+      "title": "Konverter",
+      "description": "Währungskurse, Zeitzonenkonvertierung und Einheitenrechner. Echtzeitdaten.",
+      "button": "Konverter"
+    },
+    "features": {
+      "fast": { "title": "Blitzschnell", "desc": "Optimiert für Geschwindigkeit mit minimaler Verarbeitungszeit" },
+      "secure": { "title": "Sichere Verarbeitung", "desc": "Die meisten Tools werden lokal in Ihrem Browser ausgeführt" },
+      "free": { "title": "100% Kostenlos", "desc": "Keine versteckten Gebühren, keine Premium-Stufen, keine Wasserzeichen" }
+    }
+  },
+  "video": {
+    "title": "Video-Tools",
+    "description": "Videos herunterladen, komprimieren und Audio extrahieren",
+    "downloader": {
+      "title": "Video-Downloader",
+      "description": "Fügen Sie eine Video-URL zum Herunterladen ein",
+      "placeholder": "Video-URL hier einfügen (TikTok, YouTube, etc.)",
+      "fetching": "Video-Informationen werden abgerufen...",
+      "preview": "Video-Vorschau",
+      "quality": "Qualität",
+      "download": "Herunterladen"
+    },
+    "compressor": {
+      "title": "Video-Kompressor",
+      "description": "Video-Dateigröße reduzieren",
+      "quality": "Kompressionsqualität",
+      "high": "Hohe Qualität",
+      "medium": "Mittlere Qualität",
+      "low": "Niedrige Qualität (Kleinste)",
+      "original": "Original",
+      "compressed": "Komprimiert",
+      "compress": "Video Komprimieren"
+    },
+    "extractor": {
+      "title": "Audio-Extraktor",
+      "description": "Audio aus Video als MP3 extrahieren",
+      "format": "Audio-Format",
+      "extract": "Audio Extrahieren"
+    },
+    "platforms": {
+      "tiktok": "TikTok",
+      "youtube": "YouTube",
+      "douyin": "Douyin",
+      "kuaishou": "Kuaishou",
+      "xiaohongshu": "Xiaohongshu",
+      "wechat": "WeChat Video"
+    }
+  },
+  "pdf": {
+    "title": "PDF-Tools",
+    "description": "PDF-Dateien konvertieren, zusammenführen und komprimieren",
+    "converter": {
+      "title": "PDF-Konverter",
+      "description": "Dateien in oder aus PDF konvertieren",
+      "toPdf": "In PDF konvertieren",
+      "fromPdf": "Aus PDF konvertieren",
+      "selectType": "Konvertierungstyp auswählen"
+    },
+    "merger": {
+      "title": "PDF-Zusammenführer",
+      "description": "Mehrere PDFs zu einem zusammenführen",
+      "addFiles": "Weitere Dateien hinzufügen",
+      "dragToReorder": "Ziehen zum Neuordnen",
+      "merge": "PDFs Zusammenführen"
+    },
+    "compressor": {
+      "title": "PDF-Kompressor",
+      "description": "PDF-Dateigröße reduzieren",
+      "extreme": "Extreme Kompression",
+      "recommended": "Empfohlen",
+      "lowCompression": "Niedrige Kompression",
+      "compress": "PDF Komprimieren"
+    }
+  },
+  "converter": {
+    "title": "Konverter",
+    "description": "Währungs-, Zeitzonen- und Einheitenkonvertierungstools",
+    "currency": {
+      "title": "Währungsrechner",
+      "description": "Echtzeit-Wechselkurse",
+      "from": "Von",
+      "to": "Nach",
+      "amount": "Betrag",
+      "swap": "Währungen tauschen",
+      "rate": "Wechselkurs",
+      "updated": "Zuletzt aktualisiert"
+    },
+    "timezone": {
+      "title": "Zeitzonen-Konverter",
+      "description": "Zeit zwischen verschiedenen Zeitzonen konvertieren",
+      "selectTime": "Zeit auswählen",
+      "fromZone": "Von Zeitzone",
+      "toZone": "Nach Zeitzone",
+      "currentTime": "Aktuelle Zeit"
+    },
+    "unit": {
+      "title": "Einheiten-Konverter",
+      "description": "Zwischen gängigen Einheiten konvertieren",
+      "category": "Kategorie",
+      "from": "Von",
+      "to": "Nach",
+      "value": "Wert",
+      "swap": "Einheiten tauschen",
+      "length": "Länge",
+      "weight": "Gewicht",
+      "temperature": "Temperatur",
+      "data": "Daten",
+      "speed": "Geschwindigkeit",
+      "area": "Fläche",
+      "volume": "Volumen"
+    }
+  },
+  "footer": {
+    "description": "Kostenlose Online-Tools für alle. Keine Anmeldung, keine Gebühren, keine Wasserzeichen.",
+    "quickLinks": "Schnelllinks",
+    "tools": "Tools",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "contact": "Kontakt",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "errors": {
+    "invalidUrl": "Bitte geben Sie eine gültige Video-URL ein",
+    "unsupportedPlatform": "Diese Plattform wird noch nicht unterstützt",
+    "fetchFailed": "Video konnte nicht abgerufen werden. Bitte versuchen Sie es erneut.",
+    "fileTooLarge": "Dateigröße überschreitet das maximale Limit",
+    "unsupportedFormat": "Dateiformat wird nicht unterstützt",
+    "processingFailed": "Verarbeitung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung."
+  }
+}

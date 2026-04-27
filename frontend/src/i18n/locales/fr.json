@@ -1,0 +1,181 @@
+{
+  "common": {
+    "appName": "ToolHub",
+    "tagline": "Outils en Ligne Gratuits - Rapide, Simple, Sans Inscription",
+    "home": "Accueil",
+    "videoTools": "Outils Vidéo",
+    "pdfTools": "Outils PDF",
+    "converters": "Convertisseurs",
+    "allTools": "Tous les Outils",
+    "loading": "Chargement...",
+    "processing": "Traitement...",
+    "download": "Télécharger",
+    "downloadAll": "Tout Télécharger",
+    "upload": "Télécharger",
+    "selectFile": "Sélectionner un Fichier",
+    "dragDrop": "Glissez-déposez les fichiers ici",
+    "orBrowse": "ou parcourir pour télécharger",
+    "supportedFormats": "Formats pris en charge",
+    "maxFileSize": "Taille max",
+    "clear": "Effacer",
+    "reset": "Réinitialiser",
+    "copy": "Copier",
+    "copied": "Copié!",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "language": "Langue",
+    "freeForever": "Gratuit Pour Toujours",
+    "noLogin": "Sans Inscription",
+    "browserBased": "Basé sur le Navigateur"
+  },
+  "home": {
+    "hero": {
+      "title": "Outils en Ligne Gratuits",
+      "subtitle": "Télécharger vidéo, convertir PDF, taux de change et plus. Sans inscription. Fonctionne instantanément dans votre navigateur."
+    },
+    "videoCard": {
+      "title": "Outils Vidéo",
+      "description": "Téléchargez des vidéos de TikTok, YouTube et plus. Compressez des vidéos ou extrayez l'audio en MP3.",
+      "button": "Outils Vidéo"
+    },
+    "pdfCard": {
+      "title": "Outils PDF",
+      "description": "Convertissez, fusionnez et compressez des fichiers PDF. Traitez localement dans votre navigateur.",
+      "button": "Outils PDF"
+    },
+    "converterCard": {
+      "title": "Convertisseurs",
+      "description": "Taux de change, conversion de fuseau horaire et calculatrices d'unités. Données en temps réel.",
+      "button": "Convertisseurs"
+    },
+    "features": {
+      "fast": { "title": "Ultra Rapide", "desc": "Optimisé pour la vitesse avec un temps de traitement minimal" },
+      "secure": { "title": "Traitement Sécurisé", "desc": "La plupart des outils s'exécutent localement dans votre navigateur" },
+      "free": { "title": "100% Gratuit", "desc": "Pas de frais cachés, pas de niveaux premium, pas de filigrane" }
+    }
+  },
+  "video": {
+    "title": "Outils Vidéo",
+    "description": "Téléchargez, compressez et extrayez l'audio des vidéos",
+    "downloader": {
+      "title": "Télécharger Vidéo",
+      "description": "Collez une URL vidéo à télécharger",
+      "placeholder": "Collez l'URL de la vidéo ici (TikTok, YouTube, etc.)",
+      "fetching": "Récupération des infos vidéo...",
+      "preview": "Aperçu Vidéo",
+      "quality": "Qualité",
+      "download": "Télécharger"
+    },
+    "compressor": {
+      "title": "Compresseur Vidéo",
+      "description": "Réduisez la taille du fichier vidéo",
+      "quality": "Qualité de Compression",
+      "high": "Haute Qualité",
+      "medium": "Qualité Moyenne",
+      "low": "Basse Qualité (Plus Petit)",
+      "original": "Original",
+      "compressed": "Compressé",
+      "compress": "Compresser Vidéo"
+    },
+    "extractor": {
+      "title": "Extracteur Audio",
+      "description": "Extrayez l'audio de la vidéo en MP3",
+      "format": "Format Audio",
+      "extract": "Extraire Audio"
+    },
+    "platforms": {
+      "tiktok": "TikTok",
+      "youtube": "YouTube",
+      "douyin": "Douyin",
+      "kuaishou": "Kuaishou",
+      "xiaohongshu": "Xiaohongshu",
+      "wechat": "WeChat Vidéo"
+    }
+  },
+  "pdf": {
+    "title": "Outils PDF",
+    "description": "Convertissez, fusionnez et compressez des fichiers PDF",
+    "converter": {
+      "title": "Convertisseur PDF",
+      "description": "Convertir des fichiers vers ou depuis PDF",
+      "toPdf": "Convertir en PDF",
+      "fromPdf": "Convertir depuis PDF",
+      "selectType": "Sélectionnez le type de conversion"
+    },
+    "merger": {
+      "title": "Fusionneur PDF",
+      "description": "Combinez plusieurs PDFs en un",
+      "addFiles": "Ajouter des fichiers",
+      "dragToReorder": "Glissez pour réorganiser",
+      "merge": "Fusionner PDFs"
+    },
+    "compressor": {
+      "title": "Compresseur PDF",
+      "description": "Réduisez la taille du fichier PDF",
+      "extreme": "Compression Extrême",
+      "recommended": "Recommandé",
+      "lowCompression": "Faible Compression",
+      "compress": "Compresser PDF"
+    }
+  },
+  "converter": {
+    "title": "Convertisseurs",
+    "description": "Outils de conversion de devise, fuseau horaire et unités",
+    "currency": {
+      "title": "Convertisseur de Devise",
+      "description": "Taux de change en temps réel",
+      "from": "De",
+      "to": "Vers",
+      "amount": "Montant",
+      "swap": "Échanger les devises",
+      "rate": "Taux de Change",
+      "updated": "Dernière mise à jour"
+    },
+    "timezone": {
+      "title": "Convertisseur de Fuseau Horaire",
+      "description": "Convertissez l'heure entre différents fuseaux",
+      "selectTime": "Sélectionner l'heure",
+      "fromZone": "Du fuseau horaire",
+      "toZone": "Vers le fuseau horaire",
+      "currentTime": "Heure actuelle"
+    },
+    "unit": {
+      "title": "Convertisseur d'Unités",
+      "description": "Convertissez entre les unités courantes",
+      "category": "Catégorie",
+      "from": "De",
+      "to": "Vers",
+      "value": "Valeur",
+      "swap": "Échanger les unités",
+      "length": "Longueur",
+      "weight": "Poids",
+      "temperature": "Température",
+      "data": "Données",
+      "speed": "Vitesse",
+      "area": "Surface",
+      "volume": "Volume"
+    }
+  },
+  "footer": {
+    "description": "Outils en ligne gratuits pour tous. Sans inscription, sans frais, sans filigrane.",
+    "quickLinks": "Liens Rapides",
+    "tools": "Outils",
+    "legal": "Mentions Légales",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "contact": "Contact",
+    "copyright": "Tous droits réservés."
+  },
+  "errors": {
+    "invalidUrl": "Veuillez entrer une URL vidéo valide",
+    "unsupportedPlatform": "Cette plateforme n'est pas encore prise en charge",
+    "fetchFailed": "Échec de la récupération de la vidéo. Veuillez réessayer.",
+    "fileTooLarge": "La taille du fichier dépasse la limite maximale",
+    "unsupportedFormat": "Le format de fichier n'est pas pris en charge",
+    "processingFailed": "Le traitement a échoué. Veuillez réessayer.",
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion."
+  }
+}

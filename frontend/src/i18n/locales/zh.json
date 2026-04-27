@@ -1,0 +1,181 @@
+{
+  "common": {
+    "appName": "ToolHub",
+    "tagline": "免费在线工具 - 快速、简单、无需登录",
+    "home": "首页",
+    "videoTools": "视频工具",
+    "pdfTools": "PDF工具",
+    "converters": "转换器",
+    "allTools": "所有工具",
+    "loading": "加载中...",
+    "processing": "处理中...",
+    "download": "下载",
+    "downloadAll": "全部下载",
+    "upload": "上传",
+    "selectFile": "选择文件",
+    "dragDrop": "拖拽文件到此处",
+    "orBrowse": "或浏览上传",
+    "supportedFormats": "支持的格式",
+    "maxFileSize": "最大文件大小",
+    "clear": "清除",
+    "reset": "重置",
+    "copy": "复制",
+    "copied": "已复制！",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "确认",
+    "close": "关闭",
+    "language": "语言",
+    "freeForever": "永久免费",
+    "noLogin": "无需登录",
+    "browserBased": "浏览器运行"
+  },
+  "home": {
+    "hero": {
+      "title": "免费在线工具",
+      "subtitle": "视频下载、PDF转换、汇率换算等。无需注册，浏览器即时使用。"
+    },
+    "videoCard": {
+      "title": "视频工具",
+      "description": "从抖音、TikTok、YouTube等平台下载视频。压缩视频或提取MP3音频。",
+      "button": "视频工具"
+    },
+    "pdfCard": {
+      "title": "PDF工具",
+      "description": "PDF转换、合并、压缩。本地浏览器处理，保护隐私。",
+      "button": "PDF工具"
+    },
+    "converterCard": {
+      "title": "转换器",
+      "description": "实时汇率、时区转换、单位换算。数据自动更新。",
+      "button": "转换器"
+    },
+    "features": {
+      "fast": { "title": "极速处理", "desc": "优化速度，最小处理时间" },
+      "secure": { "title": "安全处理", "desc": "大多数工具在浏览器本地运行" },
+      "free": { "title": "100%免费", "desc": "无隐藏费用，无高级版，无水印" }
+    }
+  },
+  "video": {
+    "title": "视频工具",
+    "description": "视频下载、压缩、音频提取",
+    "downloader": {
+      "title": "视频下载器",
+      "description": "粘贴视频链接即可下载",
+      "placeholder": "在此粘贴视频链接（抖音、TikTok、YouTube等）",
+      "fetching": "正在获取视频信息...",
+      "preview": "视频预览",
+      "quality": "画质",
+      "download": "下载"
+    },
+    "compressor": {
+      "title": "视频压缩器",
+      "description": "减小视频文件大小",
+      "quality": "压缩质量",
+      "high": "高质量",
+      "medium": "中等质量",
+      "low": "低质量（最小）",
+      "original": "原始",
+      "compressed": "已压缩",
+      "compress": "压缩视频"
+    },
+    "extractor": {
+      "title": "音频提取器",
+      "description": "从视频中提取MP3音频",
+      "format": "音频格式",
+      "extract": "提取音频"
+    },
+    "platforms": {
+      "tiktok": "TikTok",
+      "youtube": "YouTube",
+      "douyin": "抖音",
+      "kuaishou": "快手",
+      "xiaohongshu": "小红书",
+      "wechat": "微信视频号"
+    }
+  },
+  "pdf": {
+    "title": "PDF工具",
+    "description": "PDF转换、合并、压缩",
+    "converter": {
+      "title": "PDF转换器",
+      "description": "文件与PDF互转",
+      "toPdf": "转换为PDF",
+      "fromPdf": "从PDF转换",
+      "selectType": "选择转换类型"
+    },
+    "merger": {
+      "title": "PDF合并器",
+      "description": "将多个PDF合并为一个",
+      "addFiles": "添加更多文件",
+      "dragToReorder": "拖拽调整顺序",
+      "merge": "合并PDF"
+    },
+    "compressor": {
+      "title": "PDF压缩器",
+      "description": "减小PDF文件大小",
+      "extreme": "极限压缩",
+      "recommended": "推荐",
+      "lowCompression": "轻度压缩",
+      "compress": "压缩PDF"
+    }
+  },
+  "converter": {
+    "title": "转换器",
+    "description": "汇率、时区、单位换算工具",
+    "currency": {
+      "title": "汇率换算",
+      "description": "实时汇率",
+      "from": "从",
+      "to": "到",
+      "amount": "金额",
+      "swap": "交换货币",
+      "rate": "汇率",
+      "updated": "最后更新"
+    },
+    "timezone": {
+      "title": "时区转换",
+      "description": "跨时区时间转换",
+      "selectTime": "选择时间",
+      "fromZone": "原时区",
+      "toZone": "目标时区",
+      "currentTime": "当前时间"
+    },
+    "unit": {
+      "title": "单位换算",
+      "description": "常用单位转换",
+      "category": "类别",
+      "from": "从",
+      "to": "到",
+      "value": "数值",
+      "swap": "交换单位",
+      "length": "长度",
+      "weight": "重量",
+      "temperature": "温度",
+      "data": "数据",
+      "speed": "速度",
+      "area": "面积",
+      "volume": "体积"
+    }
+  },
+  "footer": {
+    "description": "为所有人提供的免费在线工具。无需登录、无需付费、无水印。",
+    "quickLinks": "快速链接",
+    "tools": "工具",
+    "legal": "法律信息",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "contact": "联系我们",
+    "copyright": "版权所有。"
+  },
+  "errors": {
+    "invalidUrl": "请输入有效的视频链接",
+    "unsupportedPlatform": "暂不支持此平台",
+    "fetchFailed": "获取视频失败，请重试",
+    "fileTooLarge": "文件大小超出限制",
+    "unsupportedFormat": "不支持的文件格式",
+    "processingFailed": "处理失败，请重试",
+    "networkError": "网络错误，请检查网络连接"
+  }
+}

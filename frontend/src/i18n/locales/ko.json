@@ -1,0 +1,181 @@
+{
+  "common": {
+    "appName": "ToolHub",
+    "tagline": "무료 온라인 도구 - 빠르고, 간단하고, 로그인 불필요",
+    "home": "홈",
+    "videoTools": "비디오 도구",
+    "pdfTools": "PDF 도구",
+    "converters": "변환기",
+    "allTools": "모든 도구",
+    "loading": "로딩 중...",
+    "processing": "처리 중...",
+    "download": "다운로드",
+    "downloadAll": "모두 다운로드",
+    "upload": "업로드",
+    "selectFile": "파일 선택",
+    "dragDrop": "여기에 파일을 드래그 앤 드롭",
+    "orBrowse": "또는 찾아보기를 클릭하여 업로드",
+    "supportedFormats": "지원 형식",
+    "maxFileSize": "최대 파일 크기",
+    "clear": "지우기",
+    "reset": "초기화",
+    "copy": "복사",
+    "copied": "복사됨!",
+    "error": "오류",
+    "success": "성공",
+    "cancel": "취소",
+    "confirm": "확인",
+    "close": "닫기",
+    "language": "언어",
+    "freeForever": "영구 무료",
+    "noLogin": "로그인 불필요",
+    "browserBased": "브라우저 기반"
+  },
+  "home": {
+    "hero": {
+      "title": "무료 온라인 도구",
+      "subtitle": "비디오 다운로더, PDF 변환기, 환율 등. 회원가입 불필요. 브라우저에서 즉시 작동."
+    },
+    "videoCard": {
+      "title": "비디오 도구",
+      "description": "TikTok, YouTube 등에서 비디오 다운로드. 비디오 압축 또는 MP3 오디오 추출.",
+      "button": "비디오 도구"
+    },
+    "pdfCard": {
+      "title": "PDF 도구",
+      "description": "PDF 파일 변환, 병합, 압축. 브라우저에서 로컬 처리.",
+      "button": "PDF 도구"
+    },
+    "converterCard": {
+      "title": "변환기",
+      "description": "환율, 시간대 변환, 단위 계산기. 실시간 데이터.",
+      "button": "변환기"
+    },
+    "features": {
+      "fast": { "title": "초고속", "desc": "최소 처리 시간으로 속도 최적화" },
+      "secure": { "title": "안전한 처리", "desc": "대부분의 도구가 브라우저에서 로컬 실행" },
+      "free": { "title": "100% 무료", "desc": "숨겨진 비용 없음, 프리미엄 등급 없음, 워터마크 없음" }
+    }
+  },
+  "video": {
+    "title": "비디오 도구",
+    "description": "비디오 다운로드, 압축 및 오디오 추출",
+    "downloader": {
+      "title": "비디오 다운로더",
+      "description": "다운로드할 비디오 URL 붙여넣기",
+      "placeholder": "비디오 URL을 여기에 붙여넣기 (TikTok, YouTube 등)",
+      "fetching": "비디오 정보 가져오는 중...",
+      "preview": "비디오 미리보기",
+      "quality": "품질",
+      "download": "다운로드"
+    },
+    "compressor": {
+      "title": "비디오 압축기",
+      "description": "비디오 파일 크기 줄이기",
+      "quality": "압축 품질",
+      "high": "고품질",
+      "medium": "중간 품질",
+      "low": "저품질 (가장 작음)",
+      "original": "원본",
+      "compressed": "압축됨",
+      "compress": "비디오 압축"
+    },
+    "extractor": {
+      "title": "오디오 추출기",
+      "description": "비디오에서 MP3로 오디오 추출",
+      "format": "오디오 형식",
+      "extract": "오디오 추출"
+    },
+    "platforms": {
+      "tiktok": "TikTok",
+      "youtube": "YouTube",
+      "douyin": "두인인",
+      "kuaishou": "콰이쇼우",
+      "xiaohongshu": "샤오홍슈",
+      "wechat": "웨이신 비디오"
+    }
+  },
+  "pdf": {
+    "title": "PDF 도구",
+    "description": "PDF 파일 변환, 병합, 압축",
+    "converter": {
+      "title": "PDF 변환기",
+      "description": "PDF로 또는 PDF에서 파일 변환",
+      "toPdf": "PDF로 변환",
+      "fromPdf": "PDF에서 변환",
+      "selectType": "변환 유형 선택"
+    },
+    "merger": {
+      "title": "PDF 병합기",
+      "description": "여러 PDF를 하나로 결합",
+      "addFiles": "파일 추가",
+      "dragToReorder": "드래그하여 순서 변경",
+      "merge": "PDF 병합"
+    },
+    "compressor": {
+      "title": "PDF 압축기",
+      "description": "PDF 파일 크기 줄이기",
+      "extreme": "극한 압축",
+      "recommended": "권장",
+      "lowCompression": "저압축",
+      "compress": "PDF 압축"
+    }
+  },
+  "converter": {
+    "title": "변환기",
+    "description": "환율, 시간대 및 단위 변환 도구",
+    "currency": {
+      "title": "환율 변환기",
+      "description": "실시간 환율",
+      "from": "변환 전",
+      "to": "변환 후",
+      "amount": "금액",
+      "swap": "통화 교환",
+      "rate": "환율",
+      "updated": "마지막 업데이트"
+    },
+    "timezone": {
+      "title": "시간대 변환기",
+      "description": "다른 시간대 간 시간 변환",
+      "selectTime": "시간 선택",
+      "fromZone": "원래 시간대",
+      "toZone": "대상 시간대",
+      "currentTime": "현재 시간"
+    },
+    "unit": {
+      "title": "단위 변환기",
+      "description": "일반 단위 간 변환",
+      "category": "카테고리",
+      "from": "변환 전",
+      "to": "변환 후",
+      "value": "값",
+      "swap": "단위 교환",
+      "length": "길이",
+      "weight": "무게",
+      "temperature": "온도",
+      "data": "데이터",
+      "speed": "속도",
+      "area": "면적",
+      "volume": "부피"
+    }
+  },
+  "footer": {
+    "description": "모두를 위한 무료 온라인 도구. 로그인 불필요, 요금 불필요, 워터마크 불필요.",
+    "quickLinks": "빠른 링크",
+    "tools": "도구",
+    "legal": "법적 정보",
+    "privacy": "개인정보 처리방침",
+    "terms": "서비스 약관",
+    "contact": "문의하기",
+    "copyright": "모든 권리 보유."
+  },
+  "errors": {
+    "invalidUrl": "유효한 비디오 URL을 입력해 주세요",
+    "unsupportedPlatform": "이 플랫폼은 아직 지원되지 않습니다",
+    "fetchFailed": "비디오를 가져오지 못했습니다. 다시 시도해 주세요.",
+    "fileTooLarge": "파일 크기가 최대 제한을 초과합니다",
+    "unsupportedFormat": "파일 형식이 지원되지 않습니다",
+    "processingFailed": "처리에 실패했습니다. 다시 시도해 주세요.",
+    "networkError": "네트워크 오류. 연결을 확인해 주세요."
+  }
+}

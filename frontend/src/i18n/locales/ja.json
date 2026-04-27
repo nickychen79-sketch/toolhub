@@ -1,0 +1,181 @@
+{
+  "common": {
+    "appName": "ToolHub",
+    "tagline": "無料オンラインツール - 高速、シンプル、ログイン不要",
+    "home": "ホーム",
+    "videoTools": "ビデオリール",
+    "pdfTools": "PDFツール",
+    "converters": "コンバーター",
+    "allTools": "すべてのツール",
+    "loading": "読み込み中...",
+    "processing": "処理中...",
+    "download": "ダウンロード",
+    "downloadAll": "すべてダウンロード",
+    "upload": "アップロード",
+    "selectFile": "ファイルを選択",
+    "dragDrop": "ここにファイルをドロップ",
+    "orBrowse": "または参照してアップロード",
+    "supportedFormats": "対応フォーマット",
+    "maxFileSize": "最大ファイルサイズ",
+    "clear": "クリア",
+    "reset": "リセット",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "error": "エラー",
+    "success": "成功",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "close": "閉じる",
+    "language": "言語",
+    "freeForever": "永久無料",
+    "noLogin": "ログイン不要",
+    "browserBased": "ブラウザベース"
+  },
+  "home": {
+    "hero": {
+      "title": "無料オンライン道具",
+      "subtitle": "動画ダウンローダー、PDFコンバーター、通貨レートなど。サインアップ不要。ブラウザで即座に動作。"
+    },
+    "videoCard": {
+      "title": "ビデオリール",
+      "description": "TikTok、YouTubeなどの動画をダウンロード。動画の圧縮や音声をMP3で抽出。",
+      "button": "ビデオリール"
+    },
+    "pdfCard": {
+      "title": "PDFツール",
+      "description": "PDFファイルの変換、マージ、圧縮。ブラウザ内でローカル処理。",
+      "button": "PDFツール"
+    },
+    "converterCard": {
+      "title": "コンバーター",
+      "description": "通貨換算、タイムゾーン変換、単位計算。リアルタイムデータ。",
+      "button": "コンバーター"
+    },
+    "features": {
+      "fast": { "title": "超高速", "desc": "最小処理時間で速度最適化了" },
+      "secure": { "title": "安全な処理", "desc": "ほとんどのツールはブラウザ内でローカル実行" },
+      "free": { "title": "100%無料", "desc": "隠れた料金なし、プレミアムレベルなし透かしなし" }
+    }
+  },
+  "video": {
+    "title": "ビデオリール",
+    "description": "動画のダウンロード、圧縮、音声抽出",
+    "downloader": {
+      "title": "動画ダウンローダー",
+      "description": "ダウンロードする動画URLを貼り付け",
+      "placeholder": "動画URLをここに貼り付け（TikTok、YouTubeなど）",
+      "fetching": "動画情報を取得中...",
+      "preview": "動画プレビュー",
+      "quality": "品質",
+      "download": "ダウンロード"
+    },
+    "compressor": {
+      "title": "動画圧縮機",
+      "description": "動画ファイルのサイズを縮小",
+      "quality": "圧縮品質",
+      "high": "高品質",
+      "medium": "中品質",
+      "low": "低品質（最小）",
+      "original": "オリジナル",
+      "compressed": "圧縮済み",
+      "compress": "動画を圧縮"
+    },
+    "extractor": {
+      "title": "音声抽出",
+      "description": "動画からMP3で音声を抽出",
+      "format": "音声フォーマット",
+      "extract": "音声を抽出"
+    },
+    "platforms": {
+      "tiktok": "TikTok",
+      "youtube": "YouTube",
+      "douyin": "抖音",
+      "kuaishou": "快手",
+      "xiaohongshu": "小红书",
+      "wechat": "微信视频号"
+    }
+  },
+  "pdf": {
+    "title": "PDFツール",
+    "description": "PDFファイルの変換、マージ、圧縮",
+    "converter": {
+      "title": "PDFコンバーター",
+      "description": "PDFへの変換またはPDFからの変換",
+      "toPdf": "PDFに変換",
+      "fromPdf": "PDFから変換",
+      "selectType": "変換タイプを選択"
+    },
+    "merger": {
+      "title": "PDFマージ",
+      "description": "複数のPDFを1つに結合",
+      "addFiles": "ファイルを追加",
+      "dragToReorder": "ドラッグして並べ替え",
+      "merge": "PDFをマージ"
+    },
+    "compressor": {
+      "title": "PDF圧縮機",
+      "description": "PDFファイルのサイズを縮小",
+      "extreme": "最高圧縮",
+      "recommended": "推奨",
+      "lowCompression": "低圧縮",
+      "compress": "PDFを圧縮"
+    }
+  },
+  "converter": {
+    "title": "コンバーター",
+    "description": "通貨、タイムゾーン、単位変換ツール",
+    "currency": {
+      "title": "通貨換算",
+      "description": "リアルタイム為替レート",
+      "from": "から",
+      "to": "へ",
+      "amount": "金額",
+      "swap": "通貨を交換",
+      "rate": "為替レート",
+      "updated": "最終更新"
+    },
+    "timezone": {
+      "title": "タイムゾーン変換",
+      "description": "異なるタイムゾーン間の時間を変換",
+      "selectTime": "時間を選択",
+      "fromZone": "元のタイムゾーン",
+      "toZone": "先のタイムゾーン",
+      "currentTime": "現在時刻"
+    },
+    "unit": {
+      "title": "単位換算",
+      "description": "一般的な単位間の変換",
+      "category": "カテゴリ",
+      "from": "から",
+      "to": "へ",
+      "value": "値",
+      "swap": "単位を交換",
+      "length": "長さ",
+      "weight": "重さ",
+      "temperature": "温度",
+      "data": "データ",
+      "speed": "速度",
+      "area": "面積",
+      "volume": "体積"
+    }
+  },
+  "footer": {
+    "description": "すべての人々のための無料オンライン工具。ログイン不要、料金不要、透かし不要。",
+    "quickLinks": "クイックリンク",
+    "tools": "ツール",
+    "legal": "法的情報",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "contact": "お問い合わせ",
+    "copyright": "全著作権所有。"
+  },
+  "errors": {
+    "invalidUrl": "有効な動画URLを入力してください",
+    "unsupportedPlatform": "このプラットフォームはまだサポートされていません",
+    "fetchFailed": "動画の取得に失敗しました。もう一度お試しください。",
+    "fileTooLarge": "ファイルサイズが最大制限を超えています",
+    "unsupportedFormat": "ファイル形式はサポートされていません",
+    "processingFailed": "処理に失敗しました。もう一度お試しください。",
+    "networkError": "ネットワークエラー。接続を確認してください。"
+  }
+}

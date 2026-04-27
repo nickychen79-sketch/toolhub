@@ -1,0 +1,190 @@
+{
+  "common": {
+    "appName": "ToolHub",
+    "tagline": "Free Online Tools - Fast, Simple, No Login",
+    "home": "Home",
+    "videoTools": "Video Tools",
+    "pdfTools": "PDF Tools",
+    "converters": "Converters",
+    "allTools": "All Tools",
+    "loading": "Loading...",
+    "processing": "Processing...",
+    "download": "Download",
+    "downloadAll": "Download All",
+    "upload": "Upload",
+    "selectFile": "Select File",
+    "dragDrop": "Drag & drop files here",
+    "orBrowse": "or browse to upload",
+    "supportedFormats": "Supported formats",
+    "maxFileSize": "Max file size",
+    "clear": "Clear",
+    "reset": "Reset",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "language": "Language",
+    "freeForever": "Free Forever",
+    "noLogin": "No Login Required",
+    "browserBased": "Browser Based"
+  },
+  "home": {
+    "hero": {
+      "title": "Free Online Tools",
+      "subtitle": "Video downloader, PDF converter, currency exchange and more. No signup needed. Works instantly in your browser."
+    },
+    "videoCard": {
+      "title": "Video Tools",
+      "description": "Download videos from TikTok, YouTube, and more. Compress videos or extract audio to MP3.",
+      "button": "Video Tools"
+    },
+    "pdfCard": {
+      "title": "PDF Tools",
+      "description": "Convert, merge, and compress PDF files. Process locally in your browser.",
+      "button": "PDF Tools"
+    },
+    "converterCard": {
+      "title": "Converters",
+      "description": "Currency exchange rates, timezone conversion, and unit calculators. Real-time data.",
+      "button": "Converters"
+    },
+    "features": {
+      "fast": {
+        "title": "Lightning Fast",
+        "desc": "Optimized for speed with minimal processing time"
+      },
+      "secure": {
+        "title": "Secure Processing",
+        "desc": "Most tools run locally in your browser"
+      },
+      "free": {
+        "title": "100% Free",
+        "desc": "No hidden fees, no premium tiers, no watermarks"
+      }
+    }
+  },
+  "video": {
+    "title": "Video Tools",
+    "description": "Download, compress, and extract audio from videos",
+    "downloader": {
+      "title": "Video Downloader",
+      "description": "Paste a video URL to download",
+      "placeholder": "Paste video URL here (TikTok, YouTube, etc.)",
+      "fetching": "Fetching video info...",
+      "preview": "Video Preview",
+      "quality": "Quality",
+      "download": "Download"
+    },
+    "compressor": {
+      "title": "Video Compressor",
+      "description": "Reduce video file size",
+      "quality": "Compression Quality",
+      "high": "High Quality",
+      "medium": "Medium Quality",
+      "low": "Low Quality (Smallest)",
+      "original": "Original",
+      "compressed": "Compressed",
+      "compress": "Compress Video"
+    },
+    "extractor": {
+      "title": "Audio Extractor",
+      "description": "Extract audio from video as MP3",
+      "format": "Audio Format",
+      "extract": "Extract Audio"
+    },
+    "platforms": {
+      "tiktok": "TikTok",
+      "youtube": "YouTube",
+      "douyin": "Douyin",
+      "kuaishou": "Kuaishou",
+      "xiaohongshu": "REDnote",
+      "wechat": "WeChat Video"
+    }
+  },
+  "pdf": {
+    "title": "PDF Tools",
+    "description": "Convert, merge, and compress PDF files",
+    "converter": {
+      "title": "PDF Converter",
+      "description": "Convert files to or from PDF",
+      "toPdf": "Convert to PDF",
+      "fromPdf": "Convert from PDF",
+      "selectType": "Select conversion type"
+    },
+    "merger": {
+      "title": "PDF Merger",
+      "description": "Combine multiple PDFs into one",
+      "addFiles": "Add more files",
+      "dragToReorder": "Drag to reorder",
+      "merge": "Merge PDFs"
+    },
+    "compressor": {
+      "title": "PDF Compressor",
+      "description": "Reduce PDF file size",
+      "extreme": "Extreme Compression",
+      "recommended": "Recommended",
+      "lowCompression": "Low Compression",
+      "compress": "Compress PDF"
+    }
+  },
+  "converter": {
+    "title": "Converters",
+    "description": "Currency, timezone, and unit conversion tools",
+    "currency": {
+      "title": "Currency Converter",
+      "description": "Real-time exchange rates",
+      "from": "From",
+      "to": "To",
+      "amount": "Amount",
+      "swap": "Swap currencies",
+      "rate": "Exchange Rate",
+      "updated": "Last updated"
+    },
+    "timezone": {
+      "title": "Timezone Converter",
+      "description": "Convert time across different zones",
+      "selectTime": "Select time",
+      "fromZone": "From timezone",
+      "toZone": "To timezone",
+      "currentTime": "Current time"
+    },
+    "unit": {
+      "title": "Unit Converter",
+      "description": "Convert between common units",
+      "category": "Category",
+      "from": "From",
+      "to": "To",
+      "value": "Value",
+      "swap": "Swap units",
+      "length": "Length",
+      "weight": "Weight",
+      "temperature": "Temperature",
+      "data": "Data",
+      "speed": "Speed",
+      "area": "Area",
+      "volume": "Volume"
+    }
+  },
+  "footer": {
+    "description": "Free online tools for everyone. No login, no fees, no watermarks.",
+    "quickLinks": "Quick Links",
+    "tools": "Tools",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
+  },
+  "errors": {
+    "invalidUrl": "Please enter a valid video URL",
+    "unsupportedPlatform": "This platform is not supported yet",
+    "fetchFailed": "Failed to fetch video. Please try again.",
+    "fileTooLarge": "File size exceeds the maximum limit",
+    "unsupportedFormat": "File format is not supported",
+    "processingFailed": "Processing failed. Please try again.",
+    "networkError": "Network error. Please check your connection."
+  }
+}
