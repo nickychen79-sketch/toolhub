@@ -117,6 +117,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Video, FileText, ArrowLeftRight, ArrowRight, Zap, Shield, Gift } from 'lucide-vue-next'
+import AdBanner from '../components/AdBanner.vue'
 
 const { t } = useI18n()
 

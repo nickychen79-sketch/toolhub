@@ -1,6 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col">
     <Header />
+    <AdBanner />
     <main class="flex-1">
       <RouterView v-slot="{ Component }">
         <Transition name="fade" mode="out-in">
@@ -19,6 +20,7 @@ import { useRoute } from 'vue-router'
 import Header from './components/layout/Header.vue'
 import Footer from './components/layout/Footer.vue'
 import Toast from './components/ui/Toast.vue'
+import AdBanner from './components/AdBanner.vue'
 
 const route = useRoute()
 
