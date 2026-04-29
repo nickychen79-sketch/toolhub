@@ -86,16 +86,66 @@
         <p class="text-gray-400 text-sm">
           &copy; {{ new Date().getFullYear() }} {{ t('common.appName') }}. {{ t('footer.copyright') }}
         </p>
+        <p class="text-gray-500 text-xs mt-2">
+          ToolHub provides free online tools for video downloading, PDF processing, and unit conversions.
+        </p>
       </div>
     </div>
 
-    <!-- SEO Placeholder -->
-    <div class="hidden">
-      <!-- 
-        SEO: Add structured data, meta tags, and sitemap references here
-        For production, integrate with a proper SEO plugin or SSR solution
-      -->
-    </div>
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ToolHub",
+      "url": "https://toolhub.app",
+      "logo": "https://toolhub.app/favicon.svg",
+      "description": "Free online tools suite including video downloader, PDF tools and converters",
+      "sameAs": []
+    }
+    </script>
+    
+    <!-- Structured Data - Service List -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "ToolHub Free Online Tools",
+      "description": "Collection of free online tools",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Video Downloader & Tools",
+            "url": "https://toolhub.app/video-tools",
+            "applicationCategory": "MultimediaApplication"
+          }
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "item": {
+            "@type": "WebApplication",
+            "name": "PDF Tools Suite",
+            "url": "https://toolhub.app/pdf-tools",
+            "applicationCategory": "OfficeApplication"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3, 
+          "item": {
+            "@type": "WebApplication",
+            "name": "Currency, Timezone & Unit Converters",
+            "url": "https://toolhub.app/converters",
+            "applicationCategory": "UtilityApplication"
+          }
+        }
+      ]
+    }
+    </script>
   </footer>
 </template>
 
