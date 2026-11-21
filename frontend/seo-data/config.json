@@ -1,0 +1,6 @@
+{
+  "siteUrl": "https://toolhub.pages.dev",
+  "measurementId": "G-TFRZC30ZRN",
+  "ratesApi": "https://api.exchangerate-api.com/v4/latest/USD",
+  "_说明": "siteUrl 若有自定义域名改这里一处即可；measurementId 为 GA4 数据流 ID"
+}

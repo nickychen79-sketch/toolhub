@@ -1,0 +1,49 @@
+{
+  "_说明": "Tier1 单位页 25 个。factor = 1 from 单位等于多少 to 单位，因子与 Converters.vue 的 conversionFactors 一致（十进制口径）。temperature 特殊处理，widget 用公式。",
+  "categories": {
+    "length": { "label": "Length", "base": "meters", "note": "Exact by definition: 1 inch = 2.54 cm, 1 mile = 1609.344 m." },
+    "weight": { "label": "Weight", "base": "kilograms", "note": "Exact by definition: 1 pound = 0.45359237 kg, 1 ounce = 28.349523125 g." },
+    "temperature": { "label": "Temperature", "base": "celsius", "note": "Conversions between scales are exact formulas." },
+    "data": { "label": "Data Storage", "base": "bytes", "note": "This site uses the decimal (SI) convention: 1 MB = 1,000 KB. Some operating systems display sizes in binary units (1 MiB = 1,048,576 bytes), which is why file sizes can look slightly different." },
+    "speed": { "label": "Speed", "base": "meters per second", "note": "Exact by definition: 1 knot = 1.852 km/h, 1 mph = 1.609344 km/h." }
+  },
+  "units": {
+    "km": { "label": "Kilometers", "symbol": "km", "category": "length", "factor": 0.001 },
+    "mi": { "label": "Miles", "symbol": "mi", "category": "length", "factor": 0.000621371 },
+    "cm": { "label": "Centimeters", "symbol": "cm", "category": "length", "factor": 100 },
+    "in": { "label": "Inches", "symbol": "in", "category": "length", "factor": 39.3701 },
+    "m": { "label": "Meters", "symbol": "m", "category": "length", "factor": 1 },
+    "ft": { "label": "Feet", "symbol": "ft", "category": "length", "factor": 3.28084 },
+    "mm": { "label": "Millimeters", "symbol": "mm", "category": "length", "factor": 1000 },
+    "yd": { "label": "Yards", "symbol": "yd", "category": "length", "factor": 1.09361 },
+    "kg": { "label": "Kilograms", "symbol": "kg", "category": "weight", "factor": 1 },
+    "lb": { "label": "Pounds", "symbol": "lb", "category": "weight", "factor": 2.20462 },
+    "g": { "label": "Grams", "symbol": "g", "category": "weight", "factor": 1000 },
+    "oz": { "label": "Ounces", "symbol": "oz", "category": "weight", "factor": 35.274 },
+    "c": { "label": "Celsius", "symbol": "°C", "category": "temperature" },
+    "f": { "label": "Fahrenheit", "symbol": "°F", "category": "temperature" },
+    "k": { "label": "Kelvin", "symbol": "K", "category": "temperature" },
+    "mb": { "label": "Megabytes", "symbol": "MB", "category": "data", "factor": 0.000001 },
+    "gb": { "label": "Gigabytes", "symbol": "GB", "category": "data", "factor": 0.000000001 },
+    "kb": { "label": "Kilobytes", "symbol": "KB", "category": "data", "factor": 0.001 },
+    "tb": { "label": "Terabytes", "symbol": "TB", "category": "data", "factor": 0.000000000001 },
+    "kmh": { "label": "Kilometers per hour", "symbol": "km/h", "category": "speed", "factor": 3.6 },
+    "mph": { "label": "Miles per hour", "symbol": "mph", "category": "speed", "factor": 2.23694 },
+    "mps": { "label": "Meters per second", "symbol": "m/s", "category": "speed", "factor": 1 },
+    "kn": { "label": "Knots", "symbol": "kn", "category": "speed", "factor": 1.94384 }
+  },
+  "pairs": [
+    ["km", "mi"], ["mi", "km"],
+    ["cm", "in"], ["in", "cm"],
+    ["m", "ft"], ["ft", "m"],
+    ["mm", "in"], ["yd", "m"],
+    ["kg", "lb"], ["lb", "kg"],
+    ["g", "oz"], ["oz", "g"],
+    ["lb", "oz"],
+    ["c", "f"], ["f", "c"], ["c", "k"],
+    ["mb", "gb"], ["gb", "mb"],
+    ["kb", "mb"], ["gb", "tb"],
+    ["kmh", "mph"], ["mph", "kmh"],
+    ["kmh", "mps"], ["kn", "kmh"], ["mph", "mps"]
+  ]
+}

@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generate-seo-pages.mjs && vite build && node scripts/verify-seo-output.mjs",
+    "seo:generate": "node scripts/generate-seo-pages.mjs --refresh",
+    "seo:verify": "node scripts/verify-seo-output.mjs",
     "preview": "vite preview",
     "deploy": "npm run build && npx wrangler pages deploy dist"
   },
