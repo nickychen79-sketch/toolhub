@@ -18,8 +18,8 @@
           :key="tab.id"
           @click="activeTab = tab.id"
           class="px-4 py-2.5 text-sm font-medium rounded-lg whitespace-nowrap transition-all"
-          :class="activeTab === tab.id 
-            ? 'bg-accent text-white shadow-md' 
+          :class="activeTab === tab.id
+            ? 'bg-accent text-white shadow-md'
             : 'bg-white text-secondary hover:bg-gray-50 border border-border'"
         >
           <component :is="tab.icon" class="w-4 h-4 inline mr-2" />
@@ -46,25 +46,25 @@
             <button
               @click="conversionType = 'toPdf'"
               class="p-4 rounded-xl border-2 transition-all text-left"
-              :class="conversionType === 'toPdf' 
-                ? 'border-accent bg-accent/5' 
+              :class="conversionType === 'toPdf'
+                ? 'border-accent bg-accent/5'
                 : 'border-border hover:border-accent/50'"
             >
               <FileUp class="w-6 h-6 mb-2" :class="conversionType === 'toPdf' ? 'text-accent' : 'text-secondary'" />
               <span class="font-medium" :class="conversionType === 'toPdf' ? 'text-accent' : 'text-primary'">
-                {{ t('pdf.converter.toPdf') }}
+                {{ t('pdf.converter.toPdfLabel') }}
               </span>
             </button>
             <button
               @click="conversionType = 'fromPdf'"
               class="p-4 rounded-xl border-2 transition-all text-left"
-              :class="conversionType === 'fromPdf' 
-                ? 'border-accent bg-accent/5' 
+              :class="conversionType === 'fromPdf'
+                ? 'border-accent bg-accent/5'
                 : 'border-border hover:border-accent/50'"
             >
               <FileDown class="w-6 h-6 mb-2" :class="conversionType === 'fromPdf' ? 'text-accent' : 'text-secondary'" />
               <span class="font-medium" :class="conversionType === 'fromPdf' ? 'text-accent' : 'text-primary'">
-                {{ t('pdf.converter.fromPdf') }}
+                {{ t('pdf.converter.fromPdfLabel') }}
               </span>
             </button>
           </div>
@@ -83,7 +83,8 @@
           <input
             ref="pdfInput"
             type="file"
-            :accept="conversionType === 'toPdf' ? '.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png' : '.pdf'"
+            :accept="conversionType === 'toPdf' ? '.jpg,.jpeg,.png' : '.pdf'"
+            :multiple="conversionType === 'toPdf'"
             class="hidden"
             @change="handlePdfFiles($event.target.files)"
           />
@@ -91,13 +92,31 @@
           <p class="text-primary font-medium mb-1">{{ t('common.dragDrop') }}</p>
           <p class="text-sm text-secondary">{{ t('common.orBrowse') }}</p>
           <p class="text-xs text-secondary mt-3">
-            {{ t('common.supportedFormats') }}: 
-            {{ conversionType === 'toPdf' ? 'DOC, DOCX, XLS, XLSX, PPT, PPTX, JPG, PNG' : 'PDF' }}
+            {{ conversionType === 'toPdf' ? t('pdf.converter.multiImg') : 'PDF' }}
           </p>
         </div>
 
-        <!-- File Info -->
-        <div v-if="pdfFile" class="mt-6 p-4 bg-gray-50 rounded-xl flex items-center gap-4">
+        <!-- Image List (to PDF) -->
+        <div v-if="conversionType === 'toPdf' && images.length > 0" class="mt-6 space-y-3">
+          <p class="text-sm text-secondary">{{ t('pdf.converter.multiImg') }}</p>
+          <div
+            v-for="(file, index) in images"
+            :key="index"
+            class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
+          >
+            <span class="px-2 py-1 bg-white rounded text-xs font-medium text-secondary">{{ index + 1 }}</span>
+            <div class="flex-1 min-w-0">
+              <p class="font-medium text-primary truncate">{{ file.name }}</p>
+              <p class="text-sm text-secondary">{{ formatBytes(file.size) }}</p>
+            </div>
+            <button @click="removeImage(index)" class="btn-icon">
+              <X class="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        <!-- File Info (from PDF) -->
+        <div v-if="conversionType === 'fromPdf' && pdfFile" class="mt-6 p-4 bg-gray-50 rounded-xl flex items-center gap-4">
           <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
             <FileText class="w-6 h-6 text-red-500" />
           </div>
@@ -105,8 +124,28 @@
             <p class="font-medium text-primary">{{ pdfFile.name }}</p>
             <p class="text-sm text-secondary">{{ formatBytes(pdfFile.size) }}</p>
           </div>
-          <button @click="convertPdf" :disabled="isConverting" class="btn-primary">
+        </div>
+
+        <!-- Convert Button -->
+        <div v-if="conversionType === 'toPdf' ? images.length > 0 : pdfFile" class="mt-6">
+          <button @click="convertPdf" :disabled="isConverting" class="btn-primary w-full flex items-center justify-center gap-2">
+            <Loader2 v-if="isConverting" class="w-5 h-5 animate-spin" />
+            <RefreshCw v-else class="w-5 h-5" />
             {{ isConverting ? t('common.processing') : t('pdf.converter.title') }}
+          </button>
+        </div>
+
+        <!-- Result -->
+        <div v-if="convertResult" class="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-4">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+            <FileText class="w-6 h-6 text-green-600" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium text-primary truncate">{{ convertResult.name }}</p>
+            <p class="text-sm text-secondary">{{ convertResult.info }}</p>
+          </div>
+          <button @click="downloadBlob(convertResult.blob, convertResult.name)" class="btn-primary">
+            {{ t('common.download') }}
           </button>
         </div>
       </div>
@@ -144,7 +183,7 @@
           <Merge class="w-10 h-10 text-secondary mx-auto mb-3" />
           <p class="text-primary font-medium mb-1">{{ t('common.dragDrop') }}</p>
           <p class="text-sm text-secondary">{{ t('common.orBrowse') }}</p>
-          <p class="text-text-xs text-secondary mt-3">{{ t('common.supportedFormats') }}: PDF</p>
+          <p class="text-xs text-secondary mt-3">{{ t('common.supportedFormats') }}: PDF</p>
         </div>
 
         <!-- File List with Reorder -->
@@ -177,7 +216,7 @@
         </div>
 
         <!-- Merge Button -->
-        <button 
+        <button
           v-if="mergeFiles.length > 1"
           @click="mergePdfs"
           :disabled="isMerging"
@@ -187,6 +226,20 @@
           <Merge v-else class="w-5 h-5" />
           {{ isMerging ? t('common.processing') : t('pdf.merger.merge') }}
         </button>
+
+        <!-- Result -->
+        <div v-if="mergeResult" class="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center gap-4">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+            <FileText class="w-6 h-6 text-green-600" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium text-primary truncate">{{ mergeResult.name }}</p>
+            <p class="text-sm text-secondary">{{ mergeResult.info }}</p>
+          </div>
+          <button @click="downloadBlob(mergeResult.blob, mergeResult.name)" class="btn-primary">
+            {{ t('common.download') }}
+          </button>
+        </div>
       </div>
 
       <!-- PDF Compressor -->
@@ -251,9 +304,46 @@
             <p class="font-medium text-primary">{{ compressFile.name }}</p>
             <p class="text-sm text-secondary">{{ formatBytes(compressFile.size) }}</p>
           </div>
-          <button @click="compressPdf" :disabled="isCompressing" class="btn-primary">
-            {{ isCompressing ? t('common.processing') : t('pdf.compressor.compress') }}
-          </button>
+        </div>
+
+        <!-- Compress Button -->
+        <button
+          v-if="compressFile"
+          @click="compressPdf"
+          :disabled="isCompressing"
+          class="btn-primary w-full mt-6 flex items-center justify-center gap-2"
+        >
+          <Loader2 v-if="isCompressing" class="w-5 h-5 animate-spin" />
+          <Archive v-else class="w-5 h-5" />
+          {{ isCompressing ? t('common.processing') : t('pdf.compressor.compress') }}
+        </button>
+
+        <!-- Progress -->
+        <div v-if="isCompressing" class="mt-6">
+          <div class="progress-bar">
+            <div class="progress-bar-fill" :style="{ width: compressProgress + '%' }"></div>
+          </div>
+          <p class="text-sm text-secondary text-center mt-2">{{ compressProgress }}%</p>
+        </div>
+
+        <!-- Result -->
+        <div v-if="compressResult" class="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+              <FileText class="w-6 h-6 text-green-600" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="font-medium text-primary truncate">{{ compressResult.name }}</p>
+              <p class="text-sm text-secondary">
+                {{ t('pdf.compressor.original') }}: {{ formatBytes(compressResult.before) }}
+                → {{ t('pdf.compressor.result') }}: {{ formatBytes(compressResult.after) }}
+              </p>
+            </div>
+            <button @click="downloadBlob(compressResult.blob, compressResult.name)" class="btn-primary">
+              {{ t('common.download') }}
+            </button>
+          </div>
+          <p class="text-xs text-secondary mt-3">{{ t('pdf.compressor.note') }}</p>
         </div>
       </div>
     </div>
@@ -264,10 +354,16 @@
 import { ref, markRaw } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useToast } from '@/composables/useToast'
-import { 
-  RefreshCw, FileUp, FileDown, Upload, FileText, Merge, 
+import { PDFDocument } from 'pdf-lib'
+import * as pdfjsLib from 'pdfjs-dist'
+import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
+import JSZip from 'jszip'
+import {
+  RefreshCw, FileUp, FileDown, Upload, FileText, Merge,
   Loader2, X, GripVertical, Archive
 } from 'lucide-vue-next'
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
 const { t } = useI18n()
 const toast = useToast()
@@ -288,49 +384,134 @@ const formatBytes = (bytes, decimals = 2) => {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i]
 }
 
-// Converter state
+const downloadBlob = (blob, name) => {
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = name
+  document.body.appendChild(a)
+  a.click()
+  a.remove()
+  setTimeout(() => URL.revokeObjectURL(url), 3000)
+}
+
+const baseName = (name) => name.replace(/\.[^.]+$/, '')
+
+// ---------- Converter state ----------
 const pdfInput = ref(null)
 const conversionType = ref('toPdf')
 const pdfFile = ref(null)
+const images = ref([])
 const isDraggingPdf = ref(false)
 const isConverting = ref(false)
+const convertResult = ref(null)
 
 const triggerPdfInput = () => pdfInput.value?.click()
 const handlePdfFiles = (fileList) => {
-  if (fileList?.length) pdfFile.value = fileList[0]
+  const list = Array.from(fileList || [])
+  if (!list.length) return
+  if (conversionType.value === 'toPdf') {
+    const ok = list.filter((f) => /image\/(jpeg|png)/.test(f.type))
+    if (ok.length !== list.length) toast.error('Only JPG / PNG images are supported')
+    images.value.push(...ok)
+  } else {
+    pdfFile.value = list[0]
+    convertResult.value = null
+  }
 }
 const handlePdfDrop = (event) => {
   isDraggingPdf.value = false
-  const { files: droppedFiles } = event.dataTransfer
-  if (droppedFiles?.length) pdfFile.value = droppedFiles[0]
+  handlePdfFiles(event.dataTransfer?.files)
 }
-const convertPdf = () => {
+const removeImage = (index) => images.value.splice(index, 1)
+
+const convertPdf = async () => {
   isConverting.value = true
-  setTimeout(() => {
-    isConverting.value = false
+  convertResult.value = null
+  try {
+    if (conversionType.value === 'toPdf') {
+      // 图片 → PDF：每张图一页，页面尺寸随图片
+      const out = await PDFDocument.create()
+      for (const img of images.value) {
+        const bytes = await img.arrayBuffer()
+        const embedded = /image\/png/.test(img.type)
+          ? await out.embedPng(bytes)
+          : await out.embedJpg(bytes)
+        const page = out.addPage([embedded.width, embedded.height])
+        page.drawImage(embedded, { x: 0, y: 0, width: embedded.width, height: embedded.height })
+      }
+      const blob = new Blob([await out.save()], { type: 'application/pdf' })
+      convertResult.value = {
+        blob,
+        name: 'toolhub-images.pdf',
+        info: `${t('pdf.converter.pages', { n: images.value.length })} · ${formatBytes(blob.size)}`
+      }
+    } else {
+      // PDF → PNG：每页渲染成 PNG，多页打包 zip
+      const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(await pdfFile.value.arrayBuffer()) }).promise
+      if (pdf.numPages === 1) {
+        const pngBlob = await renderPageToPng(pdf, 1, 2)
+        convertResult.value = {
+          blob: pngBlob,
+          name: `${baseName(pdfFile.value.name)}-page1.png`,
+          info: `PNG · ${formatBytes(pngBlob.size)}`
+        }
+      } else {
+        const zip = new JSZip()
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const blob = await renderPageToPng(pdf, i, 2)
+          zip.file(`page-${String(i).padStart(3, '0')}.png`, blob)
+        }
+        const zipBlob = await zip.generateAsync({ type: 'blob' })
+        convertResult.value = {
+          blob: zipBlob,
+          name: `${baseName(pdfFile.value.name)}-png.zip`,
+          info: t('pdf.converter.pages', { n: pdf.numPages }) + ` · ZIP · ${formatBytes(zipBlob.size)}`
+        }
+      }
+    }
     toast.success(t('common.success'))
-  }, 1500)
+  } catch (e) {
+    console.error(e)
+    toast.error(t('common.error'))
+  } finally {
+    isConverting.value = false
+  }
 }
 
-// Merger state
+async function renderPageToPng(pdf, pageNumber, scale = 2) {
+  const page = await pdf.getPage(pageNumber)
+  const viewport = page.getViewport({ scale })
+  const canvas = document.createElement('canvas')
+  canvas.width = viewport.width
+  canvas.height = viewport.height
+  const ctx = canvas.getContext('2d')
+  await page.render({ canvasContext: ctx, viewport }).promise
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'))
+  canvas.width = 0
+  canvas.height = 0
+  if (!blob) throw new Error('canvas toBlob failed')
+  return blob
+}
+
+// ---------- Merger state ----------
 const mergerInput = ref(null)
 const mergeFiles = ref([])
 const isDraggingMerger = ref(false)
 const isMerging = ref(false)
 const draggedIndex = ref(null)
+const mergeResult = ref(null)
 
 const triggerMergerInput = () => mergerInput.value?.click()
 const handleMergerFiles = (fileList) => {
   if (fileList?.length) {
     mergeFiles.value.push(...Array.from(fileList))
+    mergeResult.value = null
   }
 }
 const handleMergerDrop = (event) => {
   isDraggingMerger.value = false
-  const { files: droppedFiles } = event.dataTransfer
-  if (droppedFiles?.length) {
-    mergeFiles.value.push(...Array.from(droppedFiles))
-  }
+  handleMergerFiles(event.dataTransfer?.files)
 }
 const removeMergeFile = (index) => mergeFiles.value.splice(index, 1)
 const dragStart = (index) => draggedIndex.value = index
@@ -341,20 +522,40 @@ const dropFile = (index) => {
     draggedIndex.value = null
   }
 }
-const mergePdfs = () => {
+
+const mergePdfs = async () => {
   isMerging.value = true
-  setTimeout(() => {
-    isMerging.value = false
+  mergeResult.value = null
+  try {
+    const out = await PDFDocument.create()
+    for (const f of mergeFiles.value) {
+      const src = await PDFDocument.load(await f.arrayBuffer(), { ignoreEncryption: true })
+      const pages = await out.copyPages(src, src.getPageIndices())
+      pages.forEach((p) => out.addPage(p))
+    }
+    const blob = new Blob([await out.save()], { type: 'application/pdf' })
+    mergeResult.value = {
+      blob,
+      name: 'toolhub-merged.pdf',
+      info: `${out.getPageCount()} ${t('pdf.converter.pages', { n: out.getPageCount() })} · ${formatBytes(blob.size)}`
+    }
     toast.success(t('common.success'))
-  }, 2000)
+  } catch (e) {
+    console.error(e)
+    toast.error(t('common.error'))
+  } finally {
+    isMerging.value = false
+  }
 }
 
-// Compressor state
+// ---------- Compressor state ----------
 const compressInput = ref(null)
 const compressFile = ref(null)
 const isDraggingCompress = ref(false)
 const isCompressing = ref(false)
+const compressProgress = ref(0)
 const compressionLevel = ref('recommended')
+const compressResult = ref(null)
 
 const compressionOptions = [
   { value: 'extreme', label: t('pdf.compressor.extreme') },
@@ -362,20 +563,69 @@ const compressionOptions = [
   { value: 'low', label: t('pdf.compressor.lowCompression') }
 ]
 
+// 档位 → (渲染倍率, JPEG 质量)
+const COMPRESS_PRESETS = {
+  extreme: { scale: 1.0, quality: 0.5 },
+  recommended: { scale: 1.5, quality: 0.72 },
+  low: { scale: 2.0, quality: 0.85 }
+}
+
 const triggerCompressInput = () => compressInput.value?.click()
 const handleCompressFiles = (fileList) => {
-  if (fileList?.length) compressFile.value = fileList[0]
+  if (fileList?.length) {
+    compressFile.value = fileList[0]
+    compressResult.value = null
+  }
 }
 const handleCompressDrop = (event) => {
   isDraggingCompress.value = false
-  const { files: droppedFiles } = event.dataTransfer
-  if (droppedFiles?.length) compressFile.value = droppedFiles[0]
+  handleCompressFiles(event.dataTransfer?.files)
 }
-const compressPdf = () => {
+
+const compressPdf = async () => {
+  const file = compressFile.value
+  if (!file) return
   isCompressing.value = true
-  setTimeout(() => {
-    isCompressing.value = false
+  compressProgress.value = 0
+  compressResult.value = null
+  try {
+    const { scale, quality } = COMPRESS_PRESETS[compressionLevel.value] || COMPRESS_PRESETS.recommended
+    const src = await pdfjsLib.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise
+    const out = await PDFDocument.create()
+    for (let i = 1; i <= src.numPages; i++) {
+      const page = await src.getPage(i)
+      const viewport = page.getViewport({ scale })
+      const canvas = document.createElement('canvas')
+      canvas.width = viewport.width
+      canvas.height = viewport.height
+      const ctx = canvas.getContext('2d')
+      ctx.fillStyle = '#ffffff'
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      await page.render({ canvasContext: ctx, viewport }).promise
+      const jpegBlob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', quality))
+      canvas.width = 0
+      canvas.height = 0
+      if (!jpegBlob) throw new Error('canvas toBlob failed')
+      const embedded = await out.embedJpg(await jpegBlob.arrayBuffer())
+      // PDF 点尺寸 = CSS 像素 × 0.75（96dpi → 72dpi）
+      const p = out.addPage([viewport.width * 0.75, viewport.height * 0.75])
+      p.drawImage(embedded, { x: 0, y: 0, width: viewport.width * 0.75, height: viewport.height * 0.75 })
+      compressProgress.value = Math.round((i / src.numPages) * 90)
+    }
+    const blob = new Blob([await out.save()], { type: 'application/pdf' })
+    compressProgress.value = 100
+    compressResult.value = {
+      blob,
+      name: `${baseName(file.name)}-compressed.pdf`,
+      before: file.size,
+      after: blob.size
+    }
     toast.success(t('common.success'))
-  }, 1500)
+  } catch (e) {
+    console.error(e)
+    toast.error(t('common.error'))
+  } finally {
+    isCompressing.value = false
+  }
 }
 </script>

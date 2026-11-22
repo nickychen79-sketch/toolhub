@@ -52,9 +52,18 @@
       "button": "转换器"
     },
     "features": {
-      "fast": { "title": "极速处理", "desc": "优化速度，最小处理时间" },
-      "secure": { "title": "安全处理", "desc": "大多数工具在浏览器本地运行" },
-      "free": { "title": "100%免费", "desc": "无隐藏费用，无高级版，无水印" }
+      "fast": {
+        "title": "极速处理",
+        "desc": "优化速度，最小处理时间"
+      },
+      "secure": {
+        "title": "安全处理",
+        "desc": "大多数工具在浏览器本地运行"
+      },
+      "free": {
+        "title": "100%免费",
+        "desc": "无隐藏费用，无高级版，无水印"
+      }
     }
   },
   "video": {
@@ -78,13 +87,15 @@
       "low": "低质量（最小）",
       "original": "原始",
       "compressed": "已压缩",
-      "compress": "压缩视频"
+      "compress": "压缩视频",
+      "tooLarge": "文件超出浏览器处理上限（最大 250 MB）"
     },
     "extractor": {
       "title": "音频提取器",
       "description": "从视频中提取MP3音频",
       "format": "音频格式",
-      "extract": "提取音频"
+      "extract": "提取音频",
+      "tooLarge": "文件超出浏览器处理上限（最大 250 MB）"
     },
     "platforms": {
       "tiktok": "TikTok",
@@ -103,7 +114,11 @@
       "description": "文件与PDF互转",
       "toPdf": "转换为PDF",
       "fromPdf": "从PDF转换",
-      "selectType": "选择转换类型"
+      "selectType": "选择转换类型",
+      "toPdfLabel": "图片转 PDF",
+      "fromPdfLabel": "PDF 转图片",
+      "multiImg": "选择一张或多张图片（JPG / PNG）",
+      "pages": "{n} 页"
     },
     "merger": {
       "title": "PDF合并器",
@@ -118,7 +133,10 @@
       "extreme": "极限压缩",
       "recommended": "推荐",
       "lowCompression": "轻度压缩",
-      "compress": "压缩PDF"
+      "compress": "压缩PDF",
+      "original": "原文件",
+      "result": "压缩后",
+      "note": "页面在浏览器内栅格化处理，纯文字 PDF 可能不会变小——更适合扫描件和图片型文件。"
     }
   },
   "converter": {

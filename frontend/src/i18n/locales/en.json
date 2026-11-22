@@ -87,13 +87,15 @@
       "low": "Low Quality (Smallest)",
       "original": "Original",
       "compressed": "Compressed",
-      "compress": "Compress Video"
+      "compress": "Compress Video",
+      "tooLarge": "File too large for browser processing (max 250 MB)"
     },
     "extractor": {
       "title": "Audio Extractor",
       "description": "Extract audio from video as MP3",
       "format": "Audio Format",
-      "extract": "Extract Audio"
+      "extract": "Extract Audio",
+      "tooLarge": "File too large for browser processing (max 250 MB)"
     },
     "platforms": {
       "tiktok": "TikTok",
@@ -112,7 +114,11 @@
       "description": "Convert files to or from PDF",
       "toPdf": "Convert to PDF",
       "fromPdf": "Convert from PDF",
-      "selectType": "Select conversion type"
+      "selectType": "Select conversion type",
+      "toPdfLabel": "Images to PDF",
+      "fromPdfLabel": "PDF to Images",
+      "multiImg": "Select one or more images (JPG / PNG)",
+      "pages": "{n} pages"
     },
     "merger": {
       "title": "PDF Merger",
@@ -127,7 +133,10 @@
       "extreme": "Extreme Compression",
       "recommended": "Recommended",
       "lowCompression": "Low Compression",
-      "compress": "Compress PDF"
+      "compress": "Compress PDF",
+      "original": "Original",
+      "result": "Compressed",
+      "note": "Pages are rasterized in-browser, so text-heavy PDFs may not shrink — best for scanned or image-heavy files."
     }
   },
   "converter": {

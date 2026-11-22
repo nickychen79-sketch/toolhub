@@ -406,7 +406,7 @@ fs.writeFileSync(
   `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap-convert.xml\n`
 )
 
-console.log(`✔ 生成完成：${allSlugs.length} 页（汇率 ${curSlugs.length} + 单位 ${unitSlugs.length}），sitemap ${urls.length} 条`)
+console.log(`✔ 生成完成：${allSlugs.length} 页（汇率 ${curSlugs.size} + 单位 ${unitSlugs.size}），sitemap ${urls.length} 条`)
 if (allSlugs.length !== EXPECTED) {
   console.error(`✗ 页数不符：期望 ${EXPECTED}，实际 ${allSlugs.length}（可能存在重复 slug）`)
   process.exit(1)

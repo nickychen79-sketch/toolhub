@@ -299,38 +299,35 @@ const currencyAmount = ref(100)
 const fromCurrency = ref('USD')
 const toCurrency = ref('EUR')
 
-const exchangeRates = {
-  USD: 1,
-  EUR: 0.92,
-  GBP: 0.79,
-  JPY: 149.50,
-  CNY: 7.24,
-  KRW: 1320.00,
-  INR: 83.12,
-  AUD: 1.53,
-  CAD: 1.36,
-  CHF: 0.88,
-  HKD: 7.82,
-  SGD: 1.34,
-  MXN: 17.15,
-  BRL: 4.97,
-  RUB: 92.50,
-  THB: 35.80,
-  VND: 24500.00,
-  PHP: 55.80,
-  IDR: 15650.00,
-  MYR: 4.72
-}
+// 汇率：构建时快照兜底 + 运行时实时刷新（exchangerate-api v4，与 SEO 页同源）
+import ratesSnapshot from '../../seo-data/rates-snapshot.json'
+
+const exchangeRates = ref(ratesSnapshot.rates)
+const ratesDate = ref(ratesSnapshot.date)
+
+onMounted(async () => {
+  try {
+    const r = await fetch('https://api.exchangerate-api.com/v4/latest/USD', { signal: AbortSignal.timeout(8000) })
+    if (!r.ok) return
+    const j = await r.json()
+    if (j && j.rates && j.rates.USD === 1) {
+      exchangeRates.value = j.rates
+      ratesDate.value = j.date || ratesDate.value
+    }
+  } catch {
+    // 网络不可用时保持构建快照，不弹错误
+  }
+})
 
 const exchangeRate = computed(() => {
-  return exchangeRates[toCurrency.value] / exchangeRates[fromCurrency.value]
+  return exchangeRates.value[toCurrency.value] / exchangeRates.value[fromCurrency.value]
 })
 
 const convertedAmount = computed(() => {
   return currencyAmount.value * exchangeRate.value
 })
 
-const lastUpdated = ref(new Date().toLocaleString())
+const lastUpdated = ref(ratesDate.value)
 
 const swapCurrencies = () => {
   const temp = fromCurrency.value

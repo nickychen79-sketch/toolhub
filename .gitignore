@@ -30,3 +30,12 @@ npm-debug.log*
 
 # Preview files
 preview.html
+
+# Wrangler local state
+.wrangler/
+
+# WorkBuddy workspace files
+.workbuddy/
+
+# Temp rate files
+rates.tmp.json
