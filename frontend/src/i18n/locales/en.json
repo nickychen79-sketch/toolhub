@@ -64,6 +64,13 @@
         "title": "100% Free",
         "desc": "No hidden fees, no premium tiers, no watermarks"
       }
+    },
+    "aiPromo": {
+      "aiPromo": {
+        "title": "NEW: AI PDF Summary & Translate",
+        "badge": "FREE",
+        "text": "Upload a PDF and let AI summarize key points or translate it — free while launch quota lasts"
+      }
     }
   },
   "video": {
@@ -152,7 +159,10 @@
       "copied": "Copied",
       "chars": "{n} chars",
       "truncated": "Long document — only the first 60,000 chars are processed",
-      "noText": "No text layer detected — scanned PDFs are not supported yet (OCR first)"
+      "noText": "No text layer detected — scanned PDFs are not supported yet (OCR first)",
+      "promoTitle": "Free for a limited time!",
+      "promoText": " AI summaries & translations cost nothing during the launch quota period — first come, first served.",
+      "promoBadge": "FREE"
     }
   },
   "converter": {

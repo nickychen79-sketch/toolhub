@@ -24,6 +24,30 @@
       </div>
     </section>
 
+    <!-- AI Promo Banner (limited-time free) -->
+    <section class="py-4 md:py-6">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <router-link
+          to="/pdf-tools"
+          class="group block p-4 md:p-5 rounded-2xl border-2 border-violet-300 bg-gradient-to-r from-violet-50 via-fuchsia-50 to-amber-50 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 animate-fade-up"
+        >
+          <div class="flex items-center gap-4">
+            <div class="w-11 h-11 shrink-0 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-xl flex items-center justify-center shadow-md">
+              <Sparkles class="w-6 h-6 text-white" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-primary group-hover:text-violet-600 transition-colors">
+                {{ t('home.aiPromo.title') }}
+                <span class="ml-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-red-500 text-white align-middle">{{ t('home.aiPromo.badge') }}</span>
+              </p>
+              <p class="text-sm text-secondary truncate mt-0.5">{{ t('home.aiPromo.text') }}</p>
+            </div>
+            <ArrowRight class="w-5 h-5 text-violet-500 shrink-0 group-hover:translate-x-1 transition-transform" />
+          </div>
+        </router-link>
+      </div>
+    </section>
+
     <!-- Tool Cards Section -->
     <section class="py-12 md:py-16">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -116,7 +140,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Video, FileText, ArrowLeftRight, ArrowRight, Zap, Shield, Gift } from 'lucide-vue-next'
+import { Video, FileText, ArrowLeftRight, ArrowRight, Zap, Shield, Gift, Sparkles } from 'lucide-vue-next'
 
 const { t } = useI18n()
 

@@ -64,6 +64,13 @@
         "title": "100% Grátis",
         "desc": "Sem taxas ocultas, sem níveis premium, sem marcas d'água"
       }
+    },
+    "aiPromo": {
+      "aiPromo": {
+        "title": "NOVO: Resumo e tradução de PDF com IA",
+        "badge": "GRÁTIS",
+        "text": "Envie um PDF e deixe a IA resumir ou traduzir — grátis durante a cota de lançamento"
+      }
     }
   },
   "video": {
@@ -143,7 +150,10 @@
       "copied": "Copiado",
       "chars": "{n} caracteres",
       "truncated": "Documento longo — apenas os primeiros 60.000 caracteres são processados",
-      "noText": "Camada de texto não detectada — PDFs escaneados ainda não são suportados (faça OCR antes)"
+      "noText": "Camada de texto não detectada — PDFs escaneados ainda não são suportados (faça OCR antes)",
+      "promoTitle": "Grátis por tempo limitado!",
+      "promoText": " Resumos e traduções com IA são grátis durante a cota de lançamento — por ordem de chegada.",
+      "promoBadge": "GRÁTIS"
     }
   },
   "converter": {

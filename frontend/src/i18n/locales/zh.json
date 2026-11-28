@@ -64,6 +64,13 @@
         "title": "100%免费",
         "desc": "无隐藏费用，无高级版，无水印"
       }
+    },
+    "aiPromo": {
+      "aiPromo": {
+        "title": "新功能上线：AI PDF 摘要与翻译",
+        "badge": "限时免费",
+        "text": "上传 PDF，AI 帮你总结要点或翻译全文——上线额度期内 0 费用"
+      }
     }
   },
   "video": {
@@ -152,7 +159,10 @@
       "copied": "已复制",
       "chars": "{n} 字符",
       "truncated": "文档较长，仅处理前 60,000 字符",
-      "noText": "未检测到文本层——扫描版 PDF 暂不支持，请先 OCR"
+      "noText": "未检测到文本层——扫描版 PDF 暂不支持，请先 OCR",
+      "promoTitle": "限时免费开放中！",
+      "promoText": " AI 摘要 / 翻译全部 0 费用，上线额度用完即止，先到先得。",
+      "promoBadge": "FREE"
     }
   },
   "converter": {

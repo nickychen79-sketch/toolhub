@@ -348,6 +348,15 @@
       </div>
       <!-- PDF AI Assistant -->
       <div v-show="activeTab === 'ai'" class="card p-6 md:p-8 animate-fade-up">
+        <!-- Limited-time free promo strip -->
+        <div class="mb-6 p-3.5 rounded-xl border border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 flex items-center gap-3">
+          <Sparkles class="w-5 h-5 text-violet-500 shrink-0" />
+          <p class="text-sm text-primary">
+            <span class="font-semibold">{{ t('pdf.ai.promoTitle') }}</span>
+            <span class="text-secondary">{{ t('pdf.ai.promoText') }}</span>
+            <span class="ml-2 px-2 py-0.5 text-xs font-semibold rounded-full bg-red-500 text-white align-middle">{{ t('pdf.ai.promoBadge') }}</span>
+          </p>
+        </div>
         <div class="flex items-center gap-3 mb-6">
           <div class="w-10 h-10 bg-violet-500/10 rounded-xl flex items-center justify-center">
             <Sparkles class="w-5 h-5 text-violet-500" />

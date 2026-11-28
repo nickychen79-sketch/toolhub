@@ -64,6 +64,13 @@
         "title": "100% Gratuit",
         "desc": "Pas de frais cachés, pas de niveaux premium, pas de filigrane"
       }
+    },
+    "aiPromo": {
+      "aiPromo": {
+        "title": "NOUVEAU : Résumé et traduction de PDF par IA",
+        "badge": "GRATUIT",
+        "text": "Déposez un PDF et laissez l'IA le résumer ou le traduire — gratuit pendant le quota de lancement"
+      }
     }
   },
   "video": {
@@ -143,7 +150,10 @@
       "copied": "Copié",
       "chars": "{n} caractères",
       "truncated": "Document long : seuls les 60 000 premiers caractères sont traités",
-      "noText": "Aucune couche de texte détectée — les PDF scannés ne sont pas encore pris en charge (OCR d'abord)"
+      "noText": "Aucune couche de texte détectée — les PDF scannés ne sont pas encore pris en charge (OCR d'abord)",
+      "promoTitle": "Gratuit pour une durée limitée !",
+      "promoText": " Les résumés et traductions IA sont gratuits pendant le quota de lancement — premiers arrivés, premiers servis.",
+      "promoBadge": "GRATUIT"
     }
   },
   "converter": {

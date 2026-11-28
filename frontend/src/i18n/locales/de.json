@@ -64,6 +64,13 @@
         "title": "100% Kostenlos",
         "desc": "Keine versteckten Gebühren, keine Premium-Stufen, keine Wasserzeichen"
       }
+    },
+    "aiPromo": {
+      "aiPromo": {
+        "title": "NEU: KI-PDF-Zusammenfassung & Übersetzung",
+        "badge": "GRATIS",
+        "text": "PDF hochladen und per KI zusammenfassen oder übersetzen lassen — kostenlos während des Start-Kontingents"
+      }
     }
   },
   "video": {
@@ -143,7 +150,10 @@
       "copied": "Kopiert",
       "chars": "{n} Zeichen",
       "truncated": "Langes Dokument — nur die ersten 60.000 Zeichen werden verarbeitet",
-      "noText": "Keine Textebene erkannt — gescannte PDFs werden noch nicht unterstützt (erst OCR)"
+      "noText": "Keine Textebene erkannt — gescannte PDFs werden noch nicht unterstützt (erst OCR)",
+      "promoTitle": "Für begrenzte Zeit kostenlos!",
+      "promoText": " KI-Zusammenfassungen & Übersetzungen kosten im Start-Kontingent nichts — wer zuerst kommt, mahlt zuerst.",
+      "promoBadge": "GRATIS"
     }
   },
   "converter": {

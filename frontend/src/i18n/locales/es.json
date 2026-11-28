@@ -64,6 +64,13 @@
         "title": "100% Gratis",
         "desc": "Sin tarifas ocultas, sin niveles premium, sin marcas de agua"
       }
+    },
+    "aiPromo": {
+      "aiPromo": {
+        "title": "NUEVO: Resumen y traducción de PDF con IA",
+        "badge": "GRATIS",
+        "text": "Sube un PDF y deja que la IA lo resuma o traduzca — gratis mientras dure la cuota de lanzamiento"
+      }
     }
   },
   "video": {
@@ -143,7 +150,10 @@
       "copied": "Copiado",
       "chars": "{n} caracteres",
       "truncated": "Documento largo: solo se procesan los primeros 60.000 caracteres",
-      "noText": "No se detectó capa de texto: los PDF escaneados aún no son compatibles (haz OCR antes)"
+      "noText": "No se detectó capa de texto: los PDF escaneados aún no son compatibles (haz OCR antes)",
+      "promoTitle": "¡Gratis por tiempo limitado!",
+      "promoText": " Los resúmenes y traducciones con IA son gratis durante la cuota de lanzamiento — por orden de llegada.",
+      "promoBadge": "GRATIS"
     }
   },
   "converter": {
