@@ -1,13 +1,14 @@
 // routes/ai.js — AI 文本处理路由（摘要 / 翻译）
 // 上游：腾讯云大模型服务平台 TokenHub（OpenAI Chat Completions 兼容协议）
-// 端点：https://tokenhub.tencentcloudmaas.com/v1/chat/completions（广州，可 env 覆盖）
+// 端点：https://tokenhub.tencentmaas.com/v1/chat/completions（实测有效，2026-11-28；
+//       官方文档写的 tokenhub.tencentcloudmaas.com 已过期，会报 401 Key 不存在）
 // 鉴权：Authorization: Bearer <TOKENHUB_API_KEY>，密钥只放服务端 env，不下发前端
 import { Router } from 'express'
 import axios from 'axios'
 
 const router = Router()
 
-const TOKENHUB_BASE_URL = process.env.TOKENHUB_BASE_URL || 'https://tokenhub.tencentcloudmaas.com/v1'
+const TOKENHUB_BASE_URL = process.env.TOKENHUB_BASE_URL || 'https://tokenhub.tencentmaas.com/v1'
 const TOKENHUB_API_KEY = process.env.TOKENHUB_API_KEY || ''
 const TOKENHUB_MODEL = process.env.TOKENHUB_MODEL || 'deepseek-v4.1-flash'
 
