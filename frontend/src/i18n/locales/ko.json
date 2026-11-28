@@ -52,9 +52,18 @@
       "button": "변환기"
     },
     "features": {
-      "fast": { "title": "초고속", "desc": "최소 처리 시간으로 속도 최적화" },
-      "secure": { "title": "안전한 처리", "desc": "대부분의 도구가 브라우저에서 로컬 실행" },
-      "free": { "title": "100% 무료", "desc": "숨겨진 비용 없음, 프리미엄 등급 없음, 워터마크 없음" }
+      "fast": {
+        "title": "초고속",
+        "desc": "최소 처리 시간으로 속도 최적화"
+      },
+      "secure": {
+        "title": "안전한 처리",
+        "desc": "대부분의 도구가 브라우저에서 로컬 실행"
+      },
+      "free": {
+        "title": "100% 무료",
+        "desc": "숨겨진 비용 없음, 프리미엄 등급 없음, 워터마크 없음"
+      }
     }
   },
   "video": {
@@ -119,6 +128,22 @@
       "recommended": "권장",
       "lowCompression": "저압축",
       "compress": "PDF 압축"
+    },
+    "ai": {
+      "title": "AI 요약 및 번역",
+      "description": "PDF 내용을 AI로 요약하거나 번역",
+      "mode": "기능",
+      "summarize": "AI 요약",
+      "translate": "번역",
+      "targetLang": "대상 언어",
+      "run": "처리 시작",
+      "processing": "AI 처리 중…",
+      "resultTitle": "AI 결과",
+      "copy": "복사",
+      "copied": "복사됨",
+      "chars": "{n}자",
+      "truncated": "문서가 길어 처음 60,000자만 처리합니다",
+      "noText": "텍스트 레이어가 없습니다——스캔 PDF는 아직 지원되지 않습니다(먼저 OCR)"
     }
   },
   "converter": {

@@ -137,6 +137,22 @@
       "original": "Original",
       "result": "Compressed",
       "note": "Pages are rasterized in-browser, so text-heavy PDFs may not shrink — best for scanned or image-heavy files."
+    },
+    "ai": {
+      "title": "AI Summary & Translate",
+      "description": "Summarize PDF content or translate it with AI",
+      "mode": "Action",
+      "summarize": "AI Summary",
+      "translate": "Translate",
+      "targetLang": "Target language",
+      "run": "Process",
+      "processing": "AI processing…",
+      "resultTitle": "AI Result",
+      "copy": "Copy",
+      "copied": "Copied",
+      "chars": "{n} chars",
+      "truncated": "Long document — only the first 60,000 chars are processed",
+      "noText": "No text layer detected — scanned PDFs are not supported yet (OCR first)"
     }
   },
   "converter": {

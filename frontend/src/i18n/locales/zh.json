@@ -137,6 +137,22 @@
       "original": "原文件",
       "result": "压缩后",
       "note": "页面在浏览器内栅格化处理，纯文字 PDF 可能不会变小——更适合扫描件和图片型文件。"
+    },
+    "ai": {
+      "title": "AI 摘要与翻译",
+      "description": "AI 总结 PDF 内容或翻译全文",
+      "mode": "选择功能",
+      "summarize": "AI 摘要",
+      "translate": "翻译",
+      "targetLang": "目标语言",
+      "run": "开始处理",
+      "processing": "AI 处理中…",
+      "resultTitle": "AI 结果",
+      "copy": "复制",
+      "copied": "已复制",
+      "chars": "{n} 字符",
+      "truncated": "文档较长，仅处理前 60,000 字符",
+      "noText": "未检测到文本层——扫描版 PDF 暂不支持，请先 OCR"
     }
   },
   "converter": {

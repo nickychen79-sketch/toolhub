@@ -4,6 +4,7 @@ import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
 import { videoRouter } from './routes/video.js'
 import { currencyRouter } from './routes/currency.js'
+import { aiRouter } from './routes/ai.js'
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -29,6 +30,7 @@ app.use(express.json({ limit: '10mb' }))
 // Routes
 app.use('/api/video', videoRouter)
 app.use('/api/currency', currencyRouter)
+app.use('/api/ai', aiRouter)
 
 // Health check
 app.get('/api/health', (req, res) => {

@@ -52,9 +52,18 @@
       "button": "Conversores"
     },
     "features": {
-      "fast": { "title": "Ultra Rápido", "desc": "Otimizado para velocidade com tempo de processamento mínimo" },
-      "secure": { "title": "Processamento Seguro", "desc": "A maioria das ferramentas é executada localmente no seu navegador" },
-      "free": { "title": "100% Grátis", "desc": "Sem taxas ocultas, sem níveis premium, sem marcas d'água" }
+      "fast": {
+        "title": "Ultra Rápido",
+        "desc": "Otimizado para velocidade com tempo de processamento mínimo"
+      },
+      "secure": {
+        "title": "Processamento Seguro",
+        "desc": "A maioria das ferramentas é executada localmente no seu navegador"
+      },
+      "free": {
+        "title": "100% Grátis",
+        "desc": "Sem taxas ocultas, sem níveis premium, sem marcas d'água"
+      }
     }
   },
   "video": {
@@ -119,6 +128,22 @@
       "recommended": "Recomendado",
       "lowCompression": "Baixa Compressão",
       "compress": "Comprimir PDF"
+    },
+    "ai": {
+      "title": "Resumo e Tradução com IA",
+      "description": "Resuma o conteúdo do PDF ou traduza com IA",
+      "mode": "Ação",
+      "summarize": "Resumo IA",
+      "translate": "Traduzir",
+      "targetLang": "Idioma de destino",
+      "run": "Processar",
+      "processing": "Processando com IA…",
+      "resultTitle": "Resultado IA",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "chars": "{n} caracteres",
+      "truncated": "Documento longo — apenas os primeiros 60.000 caracteres são processados",
+      "noText": "Camada de texto não detectada — PDFs escaneados ainda não são suportados (faça OCR antes)"
     }
   },
   "converter": {

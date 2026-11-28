@@ -52,9 +52,18 @@
       "button": "コンバーター"
     },
     "features": {
-      "fast": { "title": "超高速", "desc": "最小処理時間で速度最適化了" },
-      "secure": { "title": "安全な処理", "desc": "ほとんどのツールはブラウザ内でローカル実行" },
-      "free": { "title": "100%無料", "desc": "隠れた料金なし、プレミアムレベルなし透かしなし" }
+      "fast": {
+        "title": "超高速",
+        "desc": "最小処理時間で速度最適化了"
+      },
+      "secure": {
+        "title": "安全な処理",
+        "desc": "ほとんどのツールはブラウザ内でローカル実行"
+      },
+      "free": {
+        "title": "100%無料",
+        "desc": "隠れた料金なし、プレミアムレベルなし透かしなし"
+      }
     }
   },
   "video": {
@@ -119,6 +128,22 @@
       "recommended": "推奨",
       "lowCompression": "低圧縮",
       "compress": "PDFを圧縮"
+    },
+    "ai": {
+      "title": "AI要約・翻訳",
+      "description": "PDFの内容をAIで要約または翻訳",
+      "mode": "機能",
+      "summarize": "AI要約",
+      "translate": "翻訳",
+      "targetLang": "翻訳先の言語",
+      "run": "処理開始",
+      "processing": "AI処理中…",
+      "resultTitle": "AI結果",
+      "copy": "コピー",
+      "copied": "コピーしました",
+      "chars": "{n} 文字",
+      "truncated": "文書が長いため、最初の60,000文字のみ処理します",
+      "noText": "テキスト層が検出されません——スキャンPDFは未対応です（先にOCRを）"
     }
   },
   "converter": {

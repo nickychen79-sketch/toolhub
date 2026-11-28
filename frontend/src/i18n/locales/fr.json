@@ -52,9 +52,18 @@
       "button": "Convertisseurs"
     },
     "features": {
-      "fast": { "title": "Ultra Rapide", "desc": "Optimisé pour la vitesse avec un temps de traitement minimal" },
-      "secure": { "title": "Traitement Sécurisé", "desc": "La plupart des outils s'exécutent localement dans votre navigateur" },
-      "free": { "title": "100% Gratuit", "desc": "Pas de frais cachés, pas de niveaux premium, pas de filigrane" }
+      "fast": {
+        "title": "Ultra Rapide",
+        "desc": "Optimisé pour la vitesse avec un temps de traitement minimal"
+      },
+      "secure": {
+        "title": "Traitement Sécurisé",
+        "desc": "La plupart des outils s'exécutent localement dans votre navigateur"
+      },
+      "free": {
+        "title": "100% Gratuit",
+        "desc": "Pas de frais cachés, pas de niveaux premium, pas de filigrane"
+      }
     }
   },
   "video": {
@@ -119,6 +128,22 @@
       "recommended": "Recommandé",
       "lowCompression": "Faible Compression",
       "compress": "Compresser PDF"
+    },
+    "ai": {
+      "title": "Résumé et traduction IA",
+      "description": "Résumer le contenu du PDF ou le traduire avec l'IA",
+      "mode": "Action",
+      "summarize": "Résumé IA",
+      "translate": "Traduire",
+      "targetLang": "Langue cible",
+      "run": "Traiter",
+      "processing": "Traitement IA…",
+      "resultTitle": "Résultat IA",
+      "copy": "Copier",
+      "copied": "Copié",
+      "chars": "{n} caractères",
+      "truncated": "Document long : seuls les 60 000 premiers caractères sont traités",
+      "noText": "Aucune couche de texte détectée — les PDF scannés ne sont pas encore pris en charge (OCR d'abord)"
     }
   },
   "converter": {

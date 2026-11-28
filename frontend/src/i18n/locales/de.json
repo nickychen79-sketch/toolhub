@@ -52,9 +52,18 @@
       "button": "Konverter"
     },
     "features": {
-      "fast": { "title": "Blitzschnell", "desc": "Optimiert für Geschwindigkeit mit minimaler Verarbeitungszeit" },
-      "secure": { "title": "Sichere Verarbeitung", "desc": "Die meisten Tools werden lokal in Ihrem Browser ausgeführt" },
-      "free": { "title": "100% Kostenlos", "desc": "Keine versteckten Gebühren, keine Premium-Stufen, keine Wasserzeichen" }
+      "fast": {
+        "title": "Blitzschnell",
+        "desc": "Optimiert für Geschwindigkeit mit minimaler Verarbeitungszeit"
+      },
+      "secure": {
+        "title": "Sichere Verarbeitung",
+        "desc": "Die meisten Tools werden lokal in Ihrem Browser ausgeführt"
+      },
+      "free": {
+        "title": "100% Kostenlos",
+        "desc": "Keine versteckten Gebühren, keine Premium-Stufen, keine Wasserzeichen"
+      }
     }
   },
   "video": {
@@ -119,6 +128,22 @@
       "recommended": "Empfohlen",
       "lowCompression": "Niedrige Kompression",
       "compress": "PDF Komprimieren"
+    },
+    "ai": {
+      "title": "KI-Zusammenfassung & Übersetzung",
+      "description": "PDF-Inhalte mit KI zusammenfassen oder übersetzen",
+      "mode": "Aktion",
+      "summarize": "KI-Zusammenfassung",
+      "translate": "Übersetzen",
+      "targetLang": "Zielsprache",
+      "run": "Verarbeiten",
+      "processing": "KI verarbeitet…",
+      "resultTitle": "KI-Ergebnis",
+      "copy": "Kopieren",
+      "copied": "Kopiert",
+      "chars": "{n} Zeichen",
+      "truncated": "Langes Dokument — nur die ersten 60.000 Zeichen werden verarbeitet",
+      "noText": "Keine Textebene erkannt — gescannte PDFs werden noch nicht unterstützt (erst OCR)"
     }
   },
   "converter": {

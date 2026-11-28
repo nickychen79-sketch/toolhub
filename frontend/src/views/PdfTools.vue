@@ -346,6 +346,121 @@
           <p class="text-xs text-secondary mt-3">{{ t('pdf.compressor.note') }}</p>
         </div>
       </div>
+      <!-- PDF AI Assistant -->
+      <div v-show="activeTab === 'ai'" class="card p-6 md:p-8 animate-fade-up">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-violet-500/10 rounded-xl flex items-center justify-center">
+            <Sparkles class="w-5 h-5 text-violet-500" />
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-primary">{{ t('pdf.ai.title') }}</h2>
+            <p class="text-sm text-secondary">{{ t('pdf.ai.description') }}</p>
+          </div>
+        </div>
+
+        <!-- Upload Zone -->
+        <div
+          class="upload-zone"
+          :class="{ 'active': isDraggingAi }"
+          @dragenter.prevent="isDraggingAi = true"
+          @dragover.prevent
+          @dragleave.prevent="isDraggingAi = false"
+          @drop.prevent="handleAiDrop"
+          @click="triggerAiInput"
+        >
+          <input
+            ref="aiInput"
+            type="file"
+            accept=".pdf"
+            class="hidden"
+            @change="handleAiFiles($event.target.files)"
+          />
+          <Sparkles class="w-10 h-10 text-secondary mx-auto mb-3" />
+          <p class="text-primary font-medium mb-1">{{ t('common.dragDrop') }}</p>
+          <p class="text-sm text-secondary">{{ t('common.orBrowse') }}</p>
+          <p class="text-xs text-secondary mt-3">{{ t('common.supportedFormats') }}: PDF</p>
+        </div>
+
+        <!-- File Info -->
+        <div v-if="aiFile" class="mt-6 p-4 bg-gray-50 rounded-xl flex items-center gap-4">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+            <FileText class="w-6 h-6 text-red-500" />
+          </div>
+          <div class="flex-1">
+            <p class="font-medium text-primary">{{ aiFile.name }}</p>
+            <p class="text-sm text-secondary">
+              {{ formatBytes(aiFile.size) }}
+              <template v-if="aiChars">· {{ t('pdf.ai.chars', { n: aiChars }) }}</template>
+            </p>
+          </div>
+          <button @click="clearAiFile" class="btn-icon">
+            <X class="w-4 h-4" />
+          </button>
+        </div>
+
+        <!-- Mode & Language -->
+        <div v-if="aiFile" class="mt-6 grid gap-4 md:grid-cols-2">
+          <div>
+            <label class="block text-sm font-medium text-primary mb-3">{{ t('pdf.ai.mode') }}</label>
+            <div class="flex gap-3">
+              <button
+                @click="aiMode = 'summarize'"
+                class="px-4 py-2.5 rounded-lg text-sm font-medium transition-all"
+                :class="aiMode === 'summarize' ? 'bg-accent text-white' : 'bg-gray-100 text-secondary hover:bg-gray-200'"
+              >
+                {{ t('pdf.ai.summarize') }}
+              </button>
+              <button
+                @click="aiMode = 'translate'"
+                class="px-4 py-2.5 rounded-lg text-sm font-medium transition-all"
+                :class="aiMode === 'translate' ? 'bg-accent text-white' : 'bg-gray-100 text-secondary hover:bg-gray-200'"
+              >
+                {{ t('pdf.ai.translate') }}
+              </button>
+            </div>
+          </div>
+          <div v-if="aiMode === 'translate'">
+            <label class="block text-sm font-medium text-primary mb-3">{{ t('pdf.ai.targetLang') }}</label>
+            <div class="flex gap-3">
+              <button
+                v-for="lang in aiLangOptions"
+                :key="lang.value"
+                @click="aiTargetLang = lang.value"
+                class="px-4 py-2.5 rounded-lg text-sm font-medium transition-all"
+                :class="aiTargetLang === lang.value ? 'bg-accent text-white' : 'bg-gray-100 text-secondary hover:bg-gray-200'"
+              >
+                {{ lang.label }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Run Button -->
+        <button
+          v-if="aiFile"
+          @click="runAi"
+          :disabled="isAiRunning"
+          class="btn-primary w-full mt-6 flex items-center justify-center gap-2"
+        >
+          <Loader2 v-if="isAiRunning" class="w-5 h-5 animate-spin" />
+          <Sparkles v-else class="w-5 h-5" />
+          {{ isAiRunning ? t('pdf.ai.processing') : t('pdf.ai.run') }}
+        </button>
+
+        <p v-if="aiTruncated" class="text-xs text-amber-600 mt-3">{{ t('pdf.ai.truncated') }}</p>
+
+        <!-- Result -->
+        <div v-if="aiResult" class="mt-6 p-5 bg-violet-50 border border-violet-200 rounded-xl">
+          <div class="flex items-center justify-between mb-3">
+            <p class="text-sm font-medium text-primary">{{ t('pdf.ai.resultTitle') }}</p>
+            <button @click="copyAiResult" class="text-sm text-accent hover:underline flex items-center gap-1">
+              <Check v-if="aiCopied" class="w-4 h-4" />
+              {{ aiCopied ? t('pdf.ai.copied') : t('pdf.ai.copy') }}
+            </button>
+          </div>
+          <div class="text-sm text-primary whitespace-pre-wrap leading-relaxed max-h-96 overflow-y-auto">{{ aiResult }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -360,8 +475,9 @@ import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import JSZip from 'jszip'
 import {
   RefreshCw, FileUp, FileDown, Upload, FileText, Merge,
-  Loader2, X, GripVertical, Archive
+  Loader2, X, GripVertical, Archive, Sparkles, Check
 } from 'lucide-vue-next'
+import axios from 'axios'
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
@@ -372,7 +488,8 @@ const activeTab = ref('converter')
 const tabs = [
   { id: 'converter', label: t('pdf.converter.title'), icon: markRaw(RefreshCw) },
   { id: 'merger', label: t('pdf.merger.title'), icon: markRaw(Merge) },
-  { id: 'compressor', label: t('pdf.compressor.title'), icon: markRaw(Archive) }
+  { id: 'compressor', label: t('pdf.compressor.title'), icon: markRaw(Archive) },
+  { id: 'ai', label: t('pdf.ai.title'), icon: markRaw(Sparkles) }
 ]
 
 const formatBytes = (bytes, decimals = 2) => {
@@ -626,6 +743,101 @@ const compressPdf = async () => {
     toast.error(t('common.error'))
   } finally {
     isCompressing.value = false
+  }
+}
+
+// ---------- AI Assistant state ----------
+const MAX_AI_CHARS = 60000
+const aiInput = ref(null)
+const aiFile = ref(null)
+const isDraggingAi = ref(false)
+const aiMode = ref('summarize')
+const aiTargetLang = ref('English')
+const aiLangOptions = [
+  { value: 'English', label: 'English' },
+  { value: '中文（简体）', label: '中文' }
+]
+const isAiRunning = ref(false)
+const aiChars = ref(0)
+const aiResult = ref('')
+const aiCopied = ref(false)
+const aiTruncated = ref(false)
+
+const triggerAiInput = () => aiInput.value?.click()
+const handleAiFiles = (fileList) => {
+  const f = fileList?.[0]
+  if (!f) return
+  if (!/\.pdf$/i.test(f.name)) {
+    toast.error('Only PDF files are supported')
+    return
+  }
+  aiFile.value = f
+  aiResult.value = ''
+  aiChars.value = 0
+  aiTruncated.value = false
+}
+const handleAiDrop = (event) => {
+  isDraggingAi.value = false
+  handleAiFiles(event.dataTransfer?.files)
+}
+const clearAiFile = () => {
+  aiFile.value = null
+  aiResult.value = ''
+  aiChars.value = 0
+  aiTruncated.value = false
+}
+
+// 用 pdfjs 抽取全文文本（文本层；扫描件无文本层会得到空文本）
+const extractPdfText = async (file) => {
+  const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise
+  const parts = []
+  for (let i = 1; i <= pdf.numPages; i++) {
+    const page = await pdf.getPage(i)
+    const tc = await page.getTextContent()
+    parts.push(tc.items.map((item) => item.str).join(' '))
+    if (parts.join('\n\n').length > MAX_AI_CHARS) break
+  }
+  return parts.join('\n\n')
+}
+
+const runAi = async () => {
+  const file = aiFile.value
+  if (!file) return
+  isAiRunning.value = true
+  aiResult.value = ''
+  aiCopied.value = false
+  try {
+    const text = await extractPdfText(file)
+    aiChars.value = Math.min(text.length, MAX_AI_CHARS)
+    if (text.trim().length < 20) {
+      toast.error(t('pdf.ai.noText'))
+      return
+    }
+    aiTruncated.value = text.length > MAX_AI_CHARS
+    const r = await axios.post('/api/ai/pdf', {
+      text: text.slice(0, MAX_AI_CHARS),
+      mode: aiMode.value,
+      targetLang: aiMode.value === 'translate' ? aiTargetLang.value : undefined
+    }, { timeout: 150000 })
+    aiResult.value = r.data?.result || ''
+    toast.success(t('common.success'))
+  } catch (e) {
+    console.error(e)
+    const msg = e.response?.data?.error
+    toast.error(msg || t('common.error'))
+  } finally {
+    isAiRunning.value = false
+  }
+}
+
+const copyAiResult = async () => {
+  if (!aiResult.value) return
+  try {
+    await navigator.clipboard.writeText(aiResult.value)
+    aiCopied.value = true
+    setTimeout(() => (aiCopied.value = false), 2000)
+  } catch {
+    toast.error(t('common.error'))
   }
 }
 </script>
